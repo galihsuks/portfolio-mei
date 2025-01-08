@@ -6,6 +6,7 @@
     --sedang: #c19277;
     --gelap: #49261d;
     --pink: #df7788;
+    --pink1: #e98495;
     --pinkterang: #ffe3de;
     --abu: rgb(170, 170, 170);
 }
@@ -14,6 +15,21 @@
     width: 80%;
     margin-inline: auto;
     max-width: 1200px;
+}
+@media (max-width: 600px) {
+    /* .container1 {
+        width: 85%;
+    } */
+    h1 {
+        font-size: 24px;
+    }
+    p,
+    li {
+        font-size: small;
+    }
+    .btn {
+        font-size: small;
+    }
 }
 .bg-gelap {
     background-color: var(--gelap);
@@ -89,32 +105,10 @@
     width: 1px;
     background-color: var(--abu);
 }
-
-.item-navbar {
-    display: block;
-    padding-inline: 1em;
-    text-decoration: none;
-    color: var(--gelap);
-    font-weight: 500;
-    cursor: pointer;
-}
-.item-navbar:hover {
-    color: var(--pink);
-}
-.item-navbar p {
-    margin: 0;
-    position: relative;
-    z-index: 2;
-}
-.item-navbar.active::after {
-    content: "";
-    display: block;
-    background-color: var(--pink);
-    height: 5px;
-    width: 100%;
-    z-index: 1;
-    /* transform: translateY(-10px); */
-    margin-top: -5px;
+@media (max-width: 600px) {
+    .vertical-text p {
+        font-size: 10px;
+    }
 }
 
 .btn-terang {
@@ -147,29 +141,16 @@
 .baris-ke-kolom {
     display: flex;
 }
-@media (max-width: 600px) {
+.baris-ke-kolom-reverse {
+    display: flex;
+}
+@media (max-width: 900px) {
     .baris-ke-kolom {
         flex-direction: column;
     }
-}
-
-.item-ability {
-    background-color: var(--pink);
-    width: 70px;
-    height: 70px;
-    border-radius: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.3em;
-    transition: 0.3s;
-}
-.item-ability img {
-    height: 100%;
-}
-.item-ability:hover {
-    background-color: var(--pink);
-    transition: 0.3s;
+    .baris-ke-kolom-reverse {
+        flex-direction: column-reverse;
+    }
 }
 
 .show-flex-ke-hide {
@@ -179,23 +160,4 @@
     .show-flex-ke-hide {
         display: none;
     }
-}
-
-.item-service {
-    background-color: var(--pink);
-    width: 70px;
-    height: 70px;
-    border-radius: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.3em;
-    transition: 0.3s;
-}
-.item-service img {
-    height: 100%;
-}
-.item-service:hover {
-    background-color: var(--pink);
-    transition: 0.3s;
 }

@@ -17,42 +17,336 @@
         <title>Meilina</title>
     </head>
     <body>
-        <div
-            style="
+        <style>
+            .item-navbar {
+                display: block;
+                padding-inline: 1em;
+                text-decoration: none;
+                color: var(--gelap);
+                font-weight: 500;
+                cursor: pointer;
+            }
+            .item-navbar:hover {
+                color: var(--pink);
+            }
+            .item-navbar p {
+                margin: 0;
+                position: relative;
+                z-index: 2;
+            }
+            .item-navbar.active::after {
+                content: "";
+                display: block;
+                background-color: var(--pink);
+                height: 5px;
+                width: 100%;
+                z-index: 1;
+                /* transform: translateY(-10px); */
+                margin-top: -5px;
+            }
+            .navbar-mobile {
+                display: none;
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 70px;
-                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
-                background-color: white;
                 z-index: 100;
-            "
-            class="d-flex align-items-center"
-        >
-            <div class="d-flex container align-items-center text-poppins gap-4">
-                <div>
-                    <h5 class="m-0 text-pink">Mei</h5>
-                </div>
-                <div style="flex: 1" class="d-flex gap-1 align-items-center">
-                    <a class="item-navbar active"><p>Hai!</p></a>
-                    <a class="item-navbar"><p>Ability</p></a>
-                    <a class="item-navbar"><p>Service</p></a>
-                    <a class="item-navbar"><p>Project</p></a>
-                    <a class="item-navbar"><p>Contributor</p></a>
-                    <a class="item-navbar"><p>Contact Me</p></a>
-                </div>
-                <div class="d-flex gap-1">
-                    <button class="btn btn-terang">My Resume</button>
+            }
+            .navbar-mobile-ganjal {
+                display: none;
+            }
+            .navbar-list-container {
+                overflow-y: hidden;
+                position: relative;
+                height: 0;
+                width: 80%;
+                margin-inline: auto;
+                background-color: white;
+                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+                z-index: 98;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2em;
+                padding-inline: 5em;
+                transition: 1s;
+            }
+            .navbar-list-container.show {
+                height: calc(93svh - 70px);
+                transition: 1s;
+            }
+            @media (max-width: 800px) {
+                .navbar-mobile-ganjal {
+                    display: block;
+                }
+                .item-navbar {
+                    width: fit-content;
+                }
+                .navbar-desktop {
+                    display: none;
+                }
+                .navbar-mobile {
+                    display: block;
+                }
+            }
+            #icon-panah-navbar {
+                transform: rotate(90deg);
+                transition: 1s;
+            }
+            #icon-panah-navbar.show {
+                transform: rotate(-90deg);
+                transition: 1s;
+            }
+        </style>
+        <div class="navbar-mobile">
+            <div
+                style="
+                    width: 100%;
+                    height: 70px;
+                    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+                    background-color: white;
+                    position: relative;
+                    z-index: 100;
+                "
+                class="d-flex align-items-center"
+            >
+                <div
+                    class="d-flex container1 align-items-center text-poppins gap-4"
+                >
+                    <div>
+                        <!-- <h5 class="m-0 text-pink">Mei</h5> -->
+                        <img src="img/mei.png" alt="" style="height: 30px" />
+                    </div>
+                    <div
+                        style="flex: 1"
+                        class="d-flex gap-1 align-items-center justify-content-center"
+                    >
+                        <div class="d-flex gap-1" id="toggle-navbar">
+                            <a class="item-navbar active"><p>Hai!</p></a>
+                            <div>
+                                <i
+                                    class="material-icons text-secondary"
+                                    id="icon-panah-navbar"
+                                    >chevron_right</i
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <a
+                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            target="_blank"
+                            class="btn btn-terang"
+                            >My Resume</a
+                        >
+                    </div>
                 </div>
             </div>
+            <div class="navbar-list-container text-poppins">
+                <a href="#hai-section" class="item-navbar active"
+                    ><p>Hai!</p></a
+                >
+                <div
+                    style="height: 1px; width: 100%; margin-inline: auto"
+                    class="bg-pinkterang"
+                ></div>
+                <a href="#ability-section" class="item-navbar"
+                    ><p>Ability</p></a
+                >
+                <div
+                    style="height: 1px; width: 100%; margin-inline: auto"
+                    class="bg-pinkterang"
+                ></div>
+                <a href="#service-section" class="item-navbar"
+                    ><p>Service</p></a
+                >
+                <div
+                    style="height: 1px; width: 100%; margin-inline: auto"
+                    class="bg-pinkterang"
+                ></div>
+                <a href="#project-section" class="item-navbar"
+                    ><p>Project</p></a
+                >
+                <div
+                    style="height: 1px; width: 100%; margin-inline: auto"
+                    class="bg-pinkterang"
+                ></div>
+                <a href="#contact-section" class="item-navbar"
+                    ><p>Contact Me</p></a
+                >
+            </div>
         </div>
-        <div style="height: 70px"></div>
+        <script>
+            const toggleNavbarElm = document.getElementById("toggle-navbar");
+            const navbarListContainerElm = document.querySelector(
+                ".navbar-list-container"
+            );
+            const iconPanahNavbarElm =
+                document.getElementById("icon-panah-navbar");
+            let bukaNavbar = false;
+            toggleNavbarElm.addEventListener("click", () => {
+                if (bukaNavbar) {
+                    iconPanahNavbarElm.classList.remove("show");
+                    navbarListContainerElm.classList.remove("show");
+                } else {
+                    iconPanahNavbarElm.classList.add("show");
+                    navbarListContainerElm.classList.add("show");
+                }
+                bukaNavbar = !bukaNavbar;
+            });
+        </script>
+        <div style="height: 70px" class="navbar-mobile-ganjal"></div>
+        <div class="navbar-desktop">
+            <div
+                style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 70px;
+                    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+                    background-color: white;
+                    z-index: 100;
+                "
+                class="d-flex align-items-center"
+            >
+                <div
+                    class="d-flex container align-items-center text-poppins gap-4"
+                >
+                    <div>
+                        <!-- <h5 class="m-0 text-pink">Mei</h5> -->
+                        <img src="img/mei.png" alt="" style="height: 30px" />
+                    </div>
+                    <div
+                        style="flex: 1"
+                        class="d-flex gap-1 align-items-center"
+                    >
+                        <a href="#hai-section" class="item-navbar active"
+                            ><p>Hai!</p></a
+                        >
+                        <a href="#ability-section" class="item-navbar"
+                            ><p>Ability</p></a
+                        >
+                        <a href="#service-section" class="item-navbar"
+                            ><p>Service</p></a
+                        >
+                        <a href="#project-section" class="item-navbar"
+                            ><p>Project</p></a
+                        >
+                        <a href="#contact-section" class="item-navbar"
+                            ><p>Contact Me</p></a
+                        >
+                    </div>
+                    <div class="d-flex gap-1">
+                        <a
+                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            target="_blank"
+                            class="btn btn-terang"
+                            >My Resume</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div style="height: 70px"></div>
+        </div>
 
         <!-- Hi! -->
-        <div style="height: calc(100svh - 120px)" class="d-flex flex-column">
-            <div class="container1 d-flex align-items-center" style="flex: 1">
-                <div style="width: 50%">
+        <style>
+            .hi-mobile {
+                display: none;
+            }
+            .hi-desktop {
+                display: flex;
+            }
+            @media (max-width: 800px) {
+                .hi-desktop {
+                    display: none;
+                }
+                .hi-mobile {
+                    display: flex;
+                }
+            }
+        </style>
+        <div
+            id="hai-section"
+            style="
+                height: calc(100svh - 120px);
+                min-height: 916px;
+                /* width: 100vw; */
+                overflow: hidden;
+            "
+            class="d-flex flex-column"
+        >
+            <div
+                class="container1 hi-mobile flex-column justify-content-center"
+                style="flex: 1"
+            >
+                <div
+                    class="d-flex align-items-end justify-content-between w-100"
+                >
+                    <div style="position: absolute; width: 310px; z-index: 2">
+                        <div
+                            style="height: 5px; width: 40px"
+                            class="bg-gelap mb-3"
+                        ></div>
+                        <h1 class="text-slab mb-3 text-gelap">
+                            Hai! Aku<br />Novita Meilina<br />Anggraini
+                        </h1>
+                        <div class="bg-pinkterang ps-3">
+                            <h1 class="text-slab text-pink mb-4">Copywriter</h1>
+                        </div>
+                    </div>
+                    <div style="width: 40%"></div>
+                    <div style="width: 100%">
+                        <img
+                            src="img/fotoku-edit.jpg"
+                            alt="potoku"
+                            style="
+                                width: 100%;
+                                position: relative;
+                                transform: translateX(40px);
+                                z-index: 1;
+                            "
+                        />
+                    </div>
+                </div>
+                <p class="text-poppins text-terang my-4">
+                    Lulusan S1 Ilmu Komunikasi di Universitas semarang dengan
+                    konsentrasi jurusan komunikasi strategis.
+                </p>
+                <div class="d-flex gap-4 mb-4 text-poppins">
+                    <div>
+                        <p class="m-0 fw-bold text-gelap">Email</p>
+                        <p class="m-0 text-secondary">
+                            novitameilinaa@gmail.com
+                        </p>
+                    </div>
+                    <div>
+                        <p class="m-0 fw-bold text-gelap">Phone</p>
+                        <p class="m-0 text-secondary">0896-3674-7858</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-1 text-poppins">
+                    <a
+                        href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                        target="_blank"
+                        class="btn btn-terang"
+                        >Download CV</a
+                    >
+                    <a
+                        target="_blank"
+                        href="mailto:novitameilinaa@gmail.com"
+                        class="btn btn-gelap"
+                        >Hire Me!</a
+                    >
+                </div>
+            </div>
+            <div
+                class="container1 align-items-center hi-desktop"
+                style="flex: 1"
+            >
+                <div style="width: 100%">
                     <h1 class="text-slab m-0 text-gelap">
                         Hai! Aku Novita Meilina Anggraini
                     </h1>
@@ -74,11 +368,21 @@
                         </div>
                     </div>
                     <div class="d-flex gap-1 text-poppins">
-                        <button class="btn btn-terang">Download CV</button>
-                        <button class="btn btn-gelap">Hire Me!</button>
+                        <a
+                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            target="_blank"
+                            class="btn btn-terang"
+                            >Download CV</a
+                        >
+                        <a
+                            target="_blank"
+                            href="mailto:novitameilinaa@gmail.com"
+                            class="btn btn-gelap"
+                            >Hire Me!</a
+                        >
                     </div>
                 </div>
-                <div style="width: 50%">
+                <div style="width: 100%">
                     <img
                         src="img/fotoku-edit.jpg"
                         alt="potoku"
@@ -86,7 +390,9 @@
                     />
                 </div>
             </div>
-            <div class="d-flex container1 gap-4 text-poppins mb-5">
+            <div
+                class="hi-mobile container1 gap-2 flex-column text-poppins mb-3"
+            >
                 <div
                     style="
                         flex: 1;
@@ -106,7 +412,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Content Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Artikel
+                            Penulis Konten
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -132,7 +438,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Script Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Artikel
+                            Penulis Naskah
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -158,7 +464,87 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Branding</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Artikel
+                            Penulis SEO
+                        </p>
+                    </div>
+                    <div class="text-secondary">
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                </div>
+            </div>
+            <div class="hi-desktop container1 gap-4 text-poppins mb-5">
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                    "
+                    class="d-flex gap-3 p-3 align-items-center"
+                >
+                    <div
+                        class="p-2 bg-gelap text-light"
+                        style="border-radius: 2em"
+                    >
+                        <i class="material-icons" style="font-size: small"
+                            >check</i
+                        >
+                    </div>
+                    <div style="flex: 1">
+                        <p class="m-0 fw-bold">Content Writing</p>
+                        <p class="text-secondary m-0" style="font-size: small">
+                            Penulis Konten
+                        </p>
+                    </div>
+                    <div class="text-secondary">
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                    "
+                    class="d-flex gap-3 p-3 align-items-center"
+                >
+                    <div
+                        class="p-2 bg-pink text-light"
+                        style="border-radius: 2em"
+                    >
+                        <i class="material-icons" style="font-size: small"
+                            >check</i
+                        >
+                    </div>
+                    <div style="flex: 1">
+                        <p class="m-0 fw-bold">Script Writing</p>
+                        <p class="text-secondary m-0" style="font-size: small">
+                            Penulis Naskah
+                        </p>
+                    </div>
+                    <div class="text-secondary">
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                    "
+                    class="d-flex gap-3 p-3 align-items-center"
+                >
+                    <div
+                        class="p-2 text-gelap border border-dark"
+                        style="border-radius: 2em"
+                    >
+                        <i class="material-icons" style="font-size: small"
+                            >check</i
+                        >
+                    </div>
+                    <div style="flex: 1">
+                        <p class="m-0 fw-bold">Branding</p>
+                        <p class="text-secondary m-0" style="font-size: small">
+                            Penulis SEO
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -171,9 +557,25 @@
         <!-- my interest -->
         <div class="py-5 bg-pinkterang1 mt-5">
             <div class="container1 d-flex flex-column align-items-center">
-                <h3 class="text-gelap text-slab text-center mb-3">
-                    My Interest
-                </h3>
+                <div class="d-flex w-100 align-items-center mb-3 gap-5">
+                    <div
+                        style="
+                            height: 1px;
+                            flex: 1;
+                            background-color: var(--gelap);
+                        "
+                    ></div>
+                    <h3 class="text-gelap text-slab text-center">
+                        My Interest
+                    </h3>
+                    <div
+                        style="
+                            height: 1px;
+                            flex: 1;
+                            background-color: var(--gelap);
+                        "
+                    ></div>
+                </div>
                 <p
                     style="font-size: large; width: 70%"
                     class="text-pink text-poppins text-center m-0"
@@ -181,11 +583,37 @@
                     Memproduksi tulisan di berbagai platform media sesuai dengan
                     tujuan yang dicapai.
                 </p>
+                <div
+                    class="mt-4"
+                    style="
+                        height: 5px;
+                        width: 20%;
+                        background-color: var(--pink);
+                    "
+                ></div>
             </div>
         </div>
 
         <!-- Ability -->
         <style>
+            .item-ability {
+                background-color: var(--pink);
+                width: 70px;
+                height: 70px;
+                border-radius: 140px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.3em;
+                transition: 0.3s;
+            }
+            .item-ability img {
+                height: 100%;
+            }
+            .item-ability:hover {
+                background-color: var(--pink);
+                transition: 0.3s;
+            }
             .ability-desktop {
                 display: flex;
             }
@@ -201,9 +629,9 @@
                 }
             }
         </style>
-        <div class="py-5">
+        <div class="py-5" id="ability-section">
             <div
-                class="mt-5 container1 baris-ke-kolom gap-5 align-items-center"
+                class="mt-5 container1 baris-ke-kolom-reverse gap-5 align-items-center"
             >
                 <div
                     style="flex: 1; font-size: small"
@@ -321,13 +749,13 @@
                 </div>
                 <div
                     style="flex: 1; font-size: small"
-                    class="ability-mobile flex-column gap-3 text-poppins text-pink fw-bold"
+                    class="ability-mobile flex-column gap-3 text-poppins text-pink fw-bold w-100"
                 >
                     <div class="d-flex gap-3 align-items-center">
                         <div
                             style="
                                 flex: 1;
-                                aspect-ratio: 8 / 7;
+                                aspect-ratio: 6 / 7;
                                 background-color: white;
                                 box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
                             "
@@ -340,12 +768,14 @@
                                     alt="manajemen waktu"
                                 />
                             </div>
-                            <p class="m-0 text-center">Manajemen<br />Waktu</p>
+                            <p class="m-0 text-center" style="font-size: 12px">
+                                Manajemen<br />Waktu
+                            </p>
                         </div>
                         <div
                             style="
                                 flex: 1;
-                                aspect-ratio: 8 / 7;
+                                aspect-ratio: 6 / 7;
                                 background-color: white;
                                 box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
                             "
@@ -358,7 +788,7 @@
                                     alt="manajemen waktu"
                                 />
                             </div>
-                            <p class="m-0 text-center">
+                            <p class="m-0 text-center" style="font-size: 12px">
                                 Komunikasi<br />Efektif
                             </p>
                         </div>
@@ -367,7 +797,7 @@
                         <div
                             style="
                                 flex: 1;
-                                aspect-ratio: 8 / 7;
+                                aspect-ratio: 6 / 7;
                                 background-color: white;
                                 box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
                             "
@@ -380,14 +810,14 @@
                                     alt="manajemen waktu"
                                 />
                             </div>
-                            <p class="m-0 text-center">
+                            <p class="m-0 text-center" style="font-size: 12px">
                                 Editing &<br />Proofreading
                             </p>
                         </div>
                         <div
                             style="
                                 flex: 1;
-                                aspect-ratio: 8 / 7;
+                                aspect-ratio: 6 / 7;
                                 background-color: white;
                                 box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
                             "
@@ -400,7 +830,7 @@
                                     alt="manajemen waktu"
                                 />
                             </div>
-                            <p class="m-0 text-center">
+                            <p class="m-0 text-center" style="font-size: 12px">
                                 Critical<br />Thinking
                             </p>
                         </div>
@@ -409,7 +839,7 @@
                         <div
                             style="
                                 flex: 1;
-                                aspect-ratio: 12 / 5;
+                                aspect-ratio: 2 / 1;
                                 background-color: white;
                                 box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
                             "
@@ -422,7 +852,7 @@
                                     alt="manajemen waktu"
                                 />
                             </div>
-                            <p class="m-0 text-center">
+                            <p class="m-0 text-center" style="font-size: 12px">
                                 Artificial Intelligence<br />Tools
                             </p>
                         </div>
@@ -446,8 +876,60 @@
         </div>
 
         <!-- services -->
-        <div class="py-5 container1">
-            <div class="d-flex gap-3 w-50">
+        <style>
+            .item-service {
+                background-color: var(--pink);
+                width: 70px;
+                height: 70px;
+                border-radius: 140px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.3em;
+                transition: 0.3s;
+            }
+            .item-service img {
+                height: 100%;
+            }
+            .item-service:hover {
+                background-color: var(--pink);
+                transition: 0.3s;
+            }
+            .service-header-desktop {
+                display: flex;
+            }
+            .service-header-mobile {
+                display: none;
+            }
+            @media (max-width: 900px) {
+                .service-header-desktop {
+                    display: none;
+                }
+                .service-header-mobile {
+                    display: flex;
+                }
+                .item-service {
+                    width: 50px;
+                    height: 50px;
+                    padding: 0.9em;
+                }
+            }
+        </style>
+        <div class="py-5 container1" id="service-section">
+            <div class="service-header-desktop gap-3 w-50">
+                <div class="vertical-text">
+                    <p>services</p>
+                </div>
+                <div>
+                    <h1 class="text-slab text-gelap mb-3">
+                        Layanan apa yang saya berikan?
+                    </h1>
+                    <p class="text-terang mb-3 text-poppins">
+                        Beberapa hal seputar tulisan yang biasa saya lakukan.
+                    </p>
+                </div>
+            </div>
+            <div class="service-header-mobile gap-3 mb-4" style="width: 70%">
                 <div class="vertical-text">
                     <p>services</p>
                 </div>
@@ -461,7 +943,7 @@
                 </div>
             </div>
             <div
-                class="d-flex gap-3 flex-column mb-4"
+                class="service-header-desktop gap-3 flex-column mb-4"
                 style="position: relative; z-index: 3"
             >
                 <div
@@ -584,6 +1066,113 @@
                 </div>
             </div>
             <div
+                class="service-header-mobile gap-2 flex-column mb-4 fw-bold text-poppins"
+                style="position: relative; z-index: 3"
+            >
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center py-3 px-4"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/konten.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">Penulisan Konten</p>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center py-3 px-4"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/branding.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">Branding & Pesan</p>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center px-4 py-3"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/iklan.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">Penulisan Iklan</p>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center px-4 py-3"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/seo.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">SEO Copywriting</p>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center px-4 py-3"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/script.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">Penulisan Skrip</p>
+                </div>
+                <div
+                    style="
+                        flex: 1;
+                        background-color: white;
+                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+                    "
+                    class="d-flex gap-3 align-items-center px-4 py-3"
+                >
+                    <div class="item-service">
+                        <img
+                            class="m-0"
+                            src="img/konten.png"
+                            alt="manajemen waktu"
+                        />
+                    </div>
+                    <p class="m-0">Konten Pemasaran</p>
+                </div>
+            </div>
+            <div
                 class="border-pink rounded-4 px-4 py-3 mb-5"
                 style="border: 3px solid var(--pink)"
             >
@@ -651,6 +1240,14 @@
             .container-container-slide-project::-webkit-scrollbar {
                 display: none;
             }
+            .container-container-slide-project {
+                height: 400px;
+            }
+            @media (max-width: 662px) {
+                .container-container-slide-project {
+                    height: 150px;
+                }
+            }
             @media (min-width: 1000px) {
                 .container-slide-project {
                     width: calc(600px * 4 + 0.3em * 3);
@@ -676,21 +1273,86 @@
                 color: white;
                 display: flex;
                 gap: 1em;
+                padding: 0.7em 1em;
+                border-radius: 1em;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+                background-color: var(--pink1);
+            }
+            .item-article:hover {
+                background-color: var(--pinkterang);
+                color: var(--pink);
+                transition: 0.3s;
             }
             .item-article img {
                 border-radius: 7px;
+                transition: 0.3s;
             }
             .item-article .category {
-                border: 1px solid var(--gelap);
-                color: var(--gelap);
+                border: 1px solid var(--pinkterang);
+                /* background-color: var(--pinkterang); */
+                color: var(--pinkterang);
                 width: fit-content;
                 padding: 3px 10px;
                 border-radius: 5px;
                 font-weight: 700;
                 font-size: small;
+                transition: 0.3s;
+            }
+            .item-article:hover img {
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+            }
+            .item-article:hover .category {
+                color: var(--pink);
+                border: 1px solid var(--pink);
+                transition: 0.3s;
+            }
+            @media (max-width: 600px) {
+                .item-article {
+                    flex-direction: column;
+                    position: relative;
+                    gap: 0.6em;
+                }
+                .item-article img {
+                    width: 100%;
+                    aspect-ratio: 2/ 1;
+                    object-fit: cover;
+                }
+                .item-article .category {
+                    position: absolute;
+                    transform: translate(10px, -40px);
+                    font-size: 10px;
+                    background-color: var(--pinkterang);
+                    color: var(--pink);
+                }
+                .item-article .tanggal {
+                    font-size: 12px;
+                }
+            }
+
+            .header-item-project {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+            }
+            .header-item-project > div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+            }
+            @media (max-width: 900px) {
+                .header-item-project {
+                    flex-direction: column;
+                    align-items: start;
+                }
+                .header-item-project > div:nth-child(2) {
+                    flex-direction: row;
+                    gap: 0.3em;
+                }
             }
         </style>
-        <div class="py-5 bg-pink">
+        <div class="py-5 bg-pink" id="project-section">
             <div class="container1">
                 <h1 class="text-center text-slab text-light mb-1">
                     My Projects
@@ -709,14 +1371,12 @@
             </div>
             <div class="d-flex flex-column gap-4">
                 <div class="w-100">
-                    <div
-                        class="container1 d-flex justify-content-between align-items-end"
-                    >
+                    <div class="header-item-project container1">
                         <div>
                             <p class="badge-project text-poppins mb-1">
                                 Building Brand
                             </p>
-                            <h1 class="text-slab text-light m-0">
+                            <h1 class="text-slab text-light mb-1">
                                 Lunarea Furniture
                             </h1>
                             <div class="d-flex gap-3">
@@ -738,9 +1398,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div
-                            class="d-flex flex-column align-items-end text-poppins"
-                        >
+                        <div class="text-poppins mt-1">
                             <p class="m-0 text-light">Created in</p>
                             <p class="m-0 text-pinkterang fw-bold">
                                 2023 - PRESENT
@@ -749,7 +1407,7 @@
                     </div>
                     <div
                         class="w-100 my-3 container-container-slide-project"
-                        style="height: 400px; overflow-x: scroll"
+                        style="overflow-x: scroll"
                     >
                         <div class="container-slide-project">
                             <div class="item-slide-project">
@@ -797,14 +1455,12 @@
                     </div>
                 </div>
                 <div class="w-100">
-                    <div
-                        class="container1 d-flex justify-content-between align-items-end"
-                    >
+                    <div class="header-item-project container1">
                         <div>
                             <p class="badge-project text-poppins mb-1">
                                 Building Brand
                             </p>
-                            <h1 class="text-slab text-light m-0">
+                            <h1 class="text-slab text-light mb-1">
                                 Ilena Furniture
                             </h1>
                             <div class="d-flex gap-3">
@@ -826,9 +1482,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div
-                            class="d-flex flex-column align-items-end text-poppins"
-                        >
+                        <div class="text-poppins mt-1">
                             <p class="m-0 text-light">Created in</p>
                             <p class="m-0 text-pinkterang fw-bold">
                                 2024 - PRESENT
@@ -837,7 +1491,7 @@
                     </div>
                     <div
                         class="w-100 my-3 container-container-slide-project"
-                        style="height: 400px; overflow-x: scroll"
+                        style="overflow-x: scroll"
                     >
                         <div class="container-slide-project">
                             <div class="item-slide-project">
@@ -882,14 +1536,12 @@
                     </div>
                 </div>
                 <div class="w-100">
-                    <div
-                        class="container1 d-flex justify-content-between align-items-end"
-                    >
+                    <div class="header-item-project container1">
                         <div>
                             <p class="badge-project text-poppins mb-1">
                                 Publish Article
                             </p>
-                            <h1 class="text-slab text-light m-0">
+                            <h1 class="text-slab text-light mb-1">
                                 Indozone Article
                             </h1>
                             <div class="d-flex gap-3">
@@ -903,15 +1555,13 @@
                                 </a>
                             </div>
                         </div>
-                        <div
-                            class="d-flex flex-column align-items-end text-poppins"
-                        >
+                        <div class="text-poppins mt-1">
                             <p class="m-0 text-light">Created in</p>
                             <p class="m-0 text-pinkterang fw-bold">2024</p>
                         </div>
                     </div>
                     <div
-                        class="container1 d-flex flex-column gap-1 text-poppins"
+                        class="container1 d-flex flex-column gap-1 text-poppins mt-3 mb-4"
                     >
                         <a
                             class="item-article"
@@ -921,28 +1571,137 @@
                                 src="https://static.promediateknologi.id/crop/0x0:0x0/188x113/webp/photo/p2/91/2024/10/03/image2-2404603226.png"
                                 alt=""
                             />
-                            <div class="d-flex flex-column bg-primary">
-                                <div class="category">News</div>
-                                <p class="m-0 judul" style="flex: 1">
+                            <div class="d-flex flex-column">
+                                <div class="category mb-1">News</div>
+                                <p class="m-0 judul fw-bold" style="flex: 1">
                                     Kamala Harris Meradang Usai Iran Hujani Area
                                     Vital Israel dengan Rudal Hipersonik
                                 </p>
-                                <p class="m-0 tanggal">
+                                <p class="mt-1 mb-0 tanggal">
                                     Kamis, 3 Oktober 2024 | 15:20 WIB
                                 </p>
                             </div>
                         </a>
                     </div>
-                    <div class="container1">
-                        <ul class="text-poppins text-pinkterang">
-                            <li>Menyusun konten pilar artikel</li>
-                            <li>Membuat artikel SEO copywriting</li>
-                            <li>
-                                Menyusun & membuat copywriting landing page
-                                perusahan
-                            </li>
-                        </ul>
+                    <div class="container1 mb-4">
+                        <div
+                            class="border-pink rounded-4 px-4 py-3"
+                            style="border: 3px solid var(--pinkterang)"
+                        >
+                            <div
+                                style="
+                                    background-color: var(--pink);
+                                    width: fit-content;
+                                    position: absolute;
+                                    transform: translate(20px, -30px);
+                                "
+                                class="text-pink px-3 d-flex align-items-center gap-2 fw-bold text-poppins"
+                            >
+                                <img
+                                    src="img/petik.png"
+                                    alt="petik"
+                                    style="width: 25px"
+                                    class="m-0"
+                                />
+                                <h5 class="text-poppins m-0 text-light">
+                                    Sample Tulisan
+                                </h5>
+                            </div>
+                            <p class="m-0 text-poppins text-light">
+                                Kamala Harris Meradang Usai Iran Hujani Area
+                                Vital Israel Dengan Rudal Hipersonik
+                            </p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <style>
+            .item-sosmed {
+                text-decoration: none;
+                color: var(--gelap);
+                border: 1px solid var(--gelap);
+                /* width: 50px;
+                height: 50px; */
+                padding: 1.3em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5em;
+                gap: 0em;
+                transition: 0.7s;
+            }
+            .item-sosmed p {
+                max-width: 0px;
+                overflow: hidden;
+                line-height: 15px;
+                color: white;
+                /* background-color: aqua; */
+                transition: 0.7s;
+            }
+            .item-sosmed img {
+                width: 15px;
+                aspect-ratio: 1 /1;
+                object-fit: contain;
+                transition: 0.7s;
+            }
+            .item-sosmed:hover {
+                background-color: var(--gelap);
+                gap: 0.8em;
+                transition: 0.7s;
+            }
+            .item-sosmed:hover p {
+                max-width: 300px;
+                transition: 0.7s;
+            }
+            .item-sosmed:hover img {
+                filter: invert(1) saturate(0) brightness(2);
+                transition: 0.7s;
+            }
+        </style>
+        <div class="py-5 container1" id="contact-section">
+            <div>
+                <div class="mb-3">
+                    <h4 class="text-terang text-poppins m-0">
+                        Mari berdiskusi dengan saya!
+                    </h4>
+                    <h1 class="text-gelap text-slab">Get In Touch</h1>
+                </div>
+                <div style="flex: 1" class="d-flex gap-1 align-items-center">
+                    <a
+                        target="_blank"
+                        href="https://wa.me/+6289636747858"
+                        class="item-sosmed"
+                    >
+                        <img src="img/phone.png" alt="" />
+                        <p class="m-0 text-poppins">Phone</p>
+                    </a>
+                    <a
+                        target="_blank"
+                        href="mailto:novitameilinaa@gmail.com"
+                        class="item-sosmed"
+                    >
+                        <img src="img/mail.png" alt="" />
+                        <p class="m-0 text-poppins">Gmail</p>
+                    </a>
+                    <a
+                        target="_blank"
+                        href="https://intip.in/novitameilinaanggraini"
+                        class="item-sosmed"
+                    >
+                        <img src="img/linked.png" alt="" />
+                        <p class="m-0 text-poppins">LinkedIn</p>
+                    </a>
+                    <a
+                        target="_blank"
+                        href="https://www.instagram.com/novita.meilina"
+                        class="item-sosmed"
+                    >
+                        <img src="img/ig.png" alt="" />
+                        <p class="m-0 text-poppins">Instagram</p>
+                    </a>
                 </div>
             </div>
         </div>
