@@ -14,7 +14,7 @@
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style.css?v=27-03-2025" />
         <title>Mei Anggraini</title>
     </head>
     <body>
@@ -313,8 +313,8 @@
                     </div>
                 </div>
                 <p class="text-poppins text-terang my-4">
-                    Lulusan S1 Ilmu Komunikasi di Universitas semarang dengan
-                    konsentrasi jurusan komunikasi strategis.
+                    Menulis & merangkai produk marketing berupa artikel SEO,
+                    landing page, email marketing hingga branding
                 </p>
                 <div class="d-flex gap-4 mb-4 text-poppins">
                     <div>
@@ -323,10 +323,10 @@
                             novitameilinaa@gmail.com
                         </p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <p class="m-0 fw-bold text-gelap">Phone</p>
                         <p class="m-0 text-secondary">0896-3674-7858</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="d-flex gap-1 text-poppins">
                     <a
@@ -353,8 +353,8 @@
                     </h1>
                     <h1 class="text-slab text-terang mb-4">Copywriter</h1>
                     <p class="text-poppins text-gelap mb-4">
-                        Lulusan S1 Ilmu Komunikasi di Universitas semarang
-                        dengan konsentrasi jurusan komunikasi strategis.
+                        Menulis & merangkai produk marketing berupa artikel SEO,
+                        landing page, email marketing hingga branding
                     </p>
                     <div class="d-flex gap-4 mb-4 text-poppins">
                         <div>
@@ -363,10 +363,10 @@
                                 novitameilinaa@gmail.com
                             </p>
                         </div>
-                        <div>
+                        <!-- <div>
                             <p class="m-0 fw-bold text-gelap">Phone</p>
                             <p class="m-0 text-secondary">0896-3674-7858</p>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="d-flex gap-1 text-poppins">
                         <a
@@ -1192,11 +1192,67 @@
                     <p class="m-0">Additional service</p>
                 </div>
                 <h5 class="text-slab text-gelap">Voice over</h5>
-                <p class="m-0 text-poppins text-terang">
+                <p class="mb-2 text-poppins text-terang">
                     Mengisi suara jadi keahlian yang baru dipelajari dan akan
                     dengan senang hati saya lakukan sesuai kesepakatan, jika
                     Anda tertarik.
                 </p>
+                <div class="d-flex gap-4 align-items-center mb-2">
+                    <div
+                        style="
+                            height: 1px;
+                            flex: 2;
+                            background-color: var(--pink);
+                        "
+                    ></div>
+                    <p class="text-slab m-0 text-abu" style="font-size: small">
+                        sample audio
+                    </p>
+                    <div
+                        style="
+                            height: 1px;
+                            flex: 1;
+                            background-color: var(--pink);
+                        "
+                    ></div>
+                </div>
+                <div class="container-audio">
+                    <div
+                        style="min-width: fit-content; width: 100%"
+                        class="d-flex gap-5 justify-content-center align-items-center"
+                    >
+                        <div class="item-audio">
+                            <div class="btn-play">
+                                <i class="material-icons">play_arrow</i>
+                            </div>
+                            <div>
+                                <p class="m-0 text-poppins">Youtube Lunarea</p>
+                                <a
+                                    target="_blank"
+                                    href="https://www.youtube.com/shorts/XtKkADKNsVo"
+                                    class="m-0"
+                                    >Lihat projek ></a
+                                >
+                            </div>
+                        </div>
+                        <div class="item-audio">
+                            <div class="btn-play">
+                                <i class="material-icons">play_arrow</i>
+                            </div>
+                            <div>
+                                <p class="m-0 text-poppins">
+                                    Instagram Lunarea
+                                </p>
+                                <a
+                                    target="_blank"
+                                    href="https://www.instagram.com/reel/C-XHmQdswia/?igsh=MWJ0ZndhMjBkdnhobg%3D%3D"
+                                    class="m-0"
+                                    >Lihat projek ></a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1269,6 +1325,15 @@
                 }
             }
 
+            .container-item-article {
+                max-height: 50svh;
+                overflow-y: auto;
+                padding: 1em;
+                scroll-snap-type: y mandatory;
+            }
+            .container-item-article::-webkit-scrollbar {
+                width: 10px;
+            }
             .item-article {
                 text-decoration: none;
                 color: white;
@@ -1276,9 +1341,11 @@
                 gap: 1em;
                 padding: 0.7em 1em;
                 border-radius: 1em;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+                /* border: 1px solid var(--pinkterang); */
+                box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
                 transition: 0.3s;
                 background-color: var(--pink1);
+                scroll-snap-align: center;
             }
             .item-article:hover {
                 background-color: var(--pinkterang);
@@ -1288,6 +1355,9 @@
             .item-article img {
                 border-radius: 7px;
                 transition: 0.3s;
+                height: 110px;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
             }
             .item-article .category {
                 border: 1px solid var(--pinkterang);
@@ -1320,7 +1390,7 @@
                     aspect-ratio: 2/ 1;
                     object-fit: cover;
                 }
-                .item-article .category {
+                .item-article:has(img) .category {
                     position: absolute;
                     transform: translate(10px, -40px);
                     font-size: 10px;
@@ -1370,7 +1440,7 @@
                     class="my-4"
                 ></div>
             </div>
-            <div class="d-flex flex-column gap-4">
+            <div class="d-flex flex-column gap-4 mb-4">
                 <div class="w-100">
                     <div class="header-item-project container1">
                         <div>
@@ -1442,7 +1512,7 @@
                         </div>
                     </div>
                     <div class="container1">
-                        <ul class="text-poppins text-pinkterang">
+                        <ul class="text-poppins text-pinkterang m-0">
                             <li>Menyusun konten pilar artikel</li>
                             <li>Membuat artikel SEO copywriting</li>
                             <li>
@@ -1452,8 +1522,19 @@
                             <li>
                                 Memproduksi script dan voice over Youtube short
                             </li>
+                            <li>Membuat copywriting deksripsi produk</li>
                         </ul>
                     </div>
+                </div>
+                <div class="container1">
+                    <div
+                        style="
+                            height: 1px;
+                            width: 100%;
+                            background-color: var(--pinkterang);
+                        "
+                        class="my-4"
+                    ></div>
                 </div>
                 <div class="w-100">
                     <div class="header-item-project container1">
@@ -1526,15 +1607,27 @@
                         </div>
                     </div>
                     <div class="container1">
-                        <ul class="text-poppins text-pinkterang">
+                        <ul class="text-poppins text-pinkterang m-0">
                             <li>Menyusun konten pilar artikel</li>
                             <li>Membuat artikel SEO copywriting</li>
                             <li>
                                 Menyusun & membuat copywriting landing page
                                 perusahan
                             </li>
+                            <li>Membuat tagline, dan branding merek</li>
+                            <li>Membuat copywriting deksripsi produk</li>
                         </ul>
                     </div>
+                </div>
+                <div class="container1">
+                    <div
+                        style="
+                            height: 1px;
+                            width: 100%;
+                            background-color: var(--pinkterang);
+                        "
+                        class="my-4"
+                    ></div>
                 </div>
                 <div class="w-100">
                     <div class="header-item-project container1">
@@ -1543,13 +1636,13 @@
                                 Publish Article
                             </p>
                             <h1 class="text-slab text-light mb-1">
-                                Indozone Article
+                                Kompasiana
                             </h1>
                             <div class="d-flex gap-3">
                                 <a
                                     target="_blank"
                                     class="item-link-project"
-                                    href="https://news.indozone.id/author/5508/Novita-Meilina-Anggraini"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619"
                                 >
                                     <img src="img/web.png" alt="website" />
                                     <p class="m-0 text-light">Website</p>
@@ -1558,60 +1651,695 @@
                         </div>
                         <div class="text-poppins mt-1">
                             <p class="m-0 text-light">Created in</p>
-                            <p class="m-0 text-pinkterang fw-bold">2024</p>
+                            <p class="m-0 text-pinkterang fw-bold">
+                                2021 - 2023
+                            </p>
                         </div>
                     </div>
-                    <div
-                        class="container1 d-flex flex-column gap-1 text-poppins mt-3 mb-4"
-                    >
-                        <a
-                            class="item-article"
-                            href="https://news.indozone.id/news/915156343/kamala-harris-meradang-usai-iran-hujani-area-vital-israel-dengan-rudal-hipersonik"
-                        >
-                            <img
-                                src="https://static.promediateknologi.id/crop/0x0:0x0/188x113/webp/photo/p2/91/2024/10/03/image2-2404603226.png"
-                                alt=""
-                            />
-                            <div class="d-flex flex-column">
-                                <div class="category mb-1">News</div>
-                                <p class="m-0 judul fw-bold" style="flex: 1">
-                                    Kamala Harris Meradang Usai Iran Hujani Area
-                                    Vital Israel dengan Rudal Hipersonik
-                                </p>
-                                <p class="mt-1 mb-0 tanggal">
-                                    Kamis, 3 Oktober 2024 | 15:20 WIB
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="container1 mb-4">
-                        <div
-                            class="border-pink rounded-4 px-4 py-3"
-                            style="border: 3px solid var(--pinkterang)"
-                        >
+                    <div class="container1 mt-3">
+                        <div class="d-flex">
                             <div
-                                style="
-                                    background-color: var(--pink);
-                                    width: fit-content;
-                                    position: absolute;
-                                    transform: translate(20px, -30px);
-                                "
-                                class="text-pink px-3 d-flex align-items-center gap-2 fw-bold text-poppins"
+                                class="vertical-text terang"
+                                style="padding-top: 1em"
                             >
-                                <img
-                                    src="img/petik.png"
-                                    alt="petik"
-                                    style="width: 25px"
-                                    class="m-0"
-                                />
-                                <h5 class="text-poppins m-0 text-light">
-                                    Sample Tulisan
-                                </h5>
+                                <p>sample tulisan</p>
                             </div>
-                            <p class="m-0 text-poppins text-light">
-                                Kamala Harris Meradang Usai Iran Hujani Area
-                                Vital Israel Dengan Rudal Hipersonik
+                            <div
+                                style="flex: 1"
+                                class="container-item-article d-flex flex-column gap-1 text-poppins"
+                            >
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/60cad7c3bb448649b546e2f2/mahasiswa-usm-laksanakan-program-kkn-dengan-menggandeng-lansia-gerakan-edukasi-aplikasi-virtual-meeting"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Sosbud
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Mahasiswa USM Laksanakan Program KKN
+                                            dengan Menggandeng Lansia Gerakan
+                                            Edukasi Aplikasi Virtual Meeting
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            17 Juni 2021 | 12:29 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Memahami Seberapa Jauh Makna
+                                            Pertemanan Lewat Undangan Pernikahan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            12 Mei 2022 | 19:50 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Memahami Seberapa Jauh Makna
+                                            Pertemanan Lewat Undangan Pernikahan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            12 Mei 2022 | 19:50 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62b3aaa8a0cdf838dc48d0f6/review-film-the-twin-cocok-buat-si-penakut-tapi-kepo-genre-film-horor"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review Film] The Twin, Cocok Buat
+                                            Si Penakut tapi Kepo Genre Film
+                                            Horor
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            23 Juni 2022 | 06:50 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62be9e4cbb44862813155792/menyandang-title-mahasiswa-di-perantauan"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Diary</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Menyandang Title Mahasiswa di
+                                            Perantauan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            1 Juli 2022 | 14:12 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c440780d823012b539ef52/review-kdrama-splash-splash-love-kisah-cinta-singkat-raja-masa-lampau-dan-siswa-modern"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review K-Drama] Splash- Splash
+                                            Love, Kisah Cinta Raja dan Siswi
+                                            Beda Generasi
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            5 Juli 2022 | 20:45 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c99a76bb4486636b045862/ukiran-langkah-berani-milo-hijrah-ke-paperstraw"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Alam & Tekno
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Ukiran Langkah Berani Milo Hijrah ke
+                                            Paperstraw
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            9 Juli 2022 | 22:10 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6305b59708a8b52068091b93/review-kdrama-liberation-notes-kisah-hidup-pekerja-kantoran-menemukan-arti-kebahagian-dan-kebebasan-hidup"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review] K-Drama: "My Liberation
+                                            Notes", Kisah Pekerja Kantoran
+                                            Mencari Arti Kebahagiaan dan
+                                            Kebebasan Hidup
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            24 Agustus 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6320959908a8b57be53bdbc2/100-tahun-eka-tjipta-widjaja-makin-eksis-dikalangan-mahasiswa-dan-pelajar-dengan-kuota-super-murah-unlimited-smartfren"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Inovasi</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            100 Tahun Eka Tjipta Widjaja, Makin
+                                            Eksis di Kalangan Mahasiswa dan
+                                            pelajar dengan Kuota Super Murah
+                                            Unlimited Smartfren
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            13 September 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63592a5c4addee7c4f0bdb02/bridemaids-antara-urgensi-dan-gengsi-pesta-pernikahan-masa-kini"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Life</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Bridemaids: Antara Urgensi dan
+                                            Gengsi Pesta Pernikahan Masa Kini
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            26 Oktober 2025
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6385304508a8b55c6852ddf2/alam-ikut-mengamalkan-sila-kelima-dalam-pancasila-di-planet-bekasi"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Sosbud
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Alam Ikut Mengamalkan Sila Kelima
+                                            dalam Pancasila di Planet Bekasi
+                                        </p>
+                                        <!-- <p class="mt-1 mb-0 tanggal"></p> -->
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="Glorifikasi Jakarta Kota Metropolitan, Masih Layak Dijadikan Destinasi Perantauan?"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Glorifikasi Jakarta Kota
+                                            Metropolitan, Masih Layak Dijadikan
+                                            Destinasi Perantauan?
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            10 Desember 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63b03b0b0788a339e069eda5/pahit-getir-jadi-siswa-rangking-1-yang-ngga-selalu-asik"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Sosmud
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Pahit Getir Jadi Siswa Ranking 1
+                                            yang Ngga Selalu Asik
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            31 Desember 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/64b7de59a0688f39ef190d72/review-film-hati-suhita-cerita-perjuangan-gadis-cerdas-menangkan-pertarungan-cinta-dengan-sempurna"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Review Film Hati Suhita: Cerita
+                                            Perjuangan Gadis Cerdas Menangkan
+                                            Pertarungan Cinta dengan Sempurna
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            9 Juli 2023
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container1">
+                    <div
+                        style="
+                            height: 1px;
+                            width: 100%;
+                            background-color: var(--pinkterang);
+                        "
+                        class="my-4"
+                    ></div>
+                </div>
+                <div class="w-100">
+                    <div class="header-item-project container1">
+                        <div>
+                            <p class="badge-project text-poppins mb-1">
+                                Publish Article
                             </p>
+                            <h1 class="text-slab text-light mb-1">Indozone</h1>
+                            <div class="d-flex gap-3">
+                                <a
+                                    target="_blank"
+                                    class="item-link-project"
+                                    href="https://news.indozone.id/author/5508/Novita-Meilina-Anggraini"
+                                >
+                                    <img src="img/news.png" alt="website" />
+                                    <p class="m-0 text-light">News</p>
+                                </a>
+                                <a
+                                    target="_blank"
+                                    class="item-link-project"
+                                    href="https://food.indozone.id/author/5508/Novita-Meilina-Anggraini"
+                                >
+                                    <img src="img/food.png" alt="website" />
+                                    <p class="m-0 text-light">Food</p>
+                                </a>
+                                <a
+                                    target="_blank"
+                                    class="item-link-project"
+                                    href="https://tech.indozone.id/author/5508/Novita-Meilina-Anggraini"
+                                >
+                                    <img src="img/tech.png" alt="website" />
+                                    <p class="m-0 text-light">Tech</p>
+                                </a>
+                                <a
+                                    target="_blank"
+                                    class="item-link-project"
+                                    href="https://www.indozone.id/community-writer/novita-meilina-anggraini"
+                                >
+                                    <img src="img/travel.png" alt="website" />
+                                    <p class="m-0 text-light">Travel</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-poppins mt-1">
+                            <p class="m-0 text-light">Created in</p>
+                            <p class="m-0 text-pinkterang fw-bold">
+                                2023 - 2024
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container1 mt-3">
+                        <div class="d-flex">
+                            <div
+                                class="vertical-text terang"
+                                style="padding-top: 1em"
+                            >
+                                <p>sample tulisan</p>
+                            </div>
+                            <div
+                                style="flex: 1"
+                                class="container-item-article d-flex flex-column gap-1 text-poppins"
+                            >
+                                <a
+                                    class="item-article"
+                                    href="https://travel.indozone.id/news/951271416/melihat-keindahan-masjid-agung-jawa-tengah-punya-arsitektur-paduan-jawa-dan-arab"
+                                >
+                                    <img
+                                        src="https://assets.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2023/02/28/o8sAvDL/melihat-keindahan-masjid-agung-jawa-tengah-punya-arsitektur-paduan-jawa-dan-arab59.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Travel</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Melihat Keindahan Masjid Agung Jawa
+                                            Tengah, Punya Arsitektur Paduan Jawa
+                                            dan Arab
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 28 Februari 2023 | 14:34 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://travel.indozone.id/news/951272484/liburan-asyik-di-pantai-kartini-yang-berpasir-putih-ikonnya-kota-jepara"
+                                >
+                                    <img
+                                        src="https://assets.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2023/06/18/Z8s4DLY/liburan-asyik-di-pantai-kartini-yang-berpasir-putih-ikonnya-kota-jepara47.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Travel</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Liburan Asyik di Pantai Kartini yang
+                                            Berpasir Putih, Ikonnya Kota Jepara
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Senin, 19 Juni 2023 | 02:55 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://food.indozone.id/resep/943304471/resep-dan-cara-membuat-es-gudir-minuman-penumpas-dahaga-khas-jawa-timur-yang-kini-jarang-ditemukan"
+                                >
+                                    <img
+                                        src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/94/2023/11/20/es-gudir1-3155161267.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Food</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Resep dan Cara Membuat Es Gudir,
+                                            Minuman Penumpas Dahaga Khas Jawa
+                                            Timur yang Kini Jarang Ditemukan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 21 November 2023 | 07:30 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://tech.indozone.id/gadget/924899875/google-translator-vs-microsoft-translator-mana-yang-lebih-baik"
+                                >
+                                    <img
+                                        src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/92/2024/07/24/111-2832066898.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Tech</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Google Translator Vs Microsoft
+                                            Translator, Mana yang Lebih Baik?
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Kamis, 25 Juli 2024 | 07:00 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://tech.indozone.id/gadget/924973962/cara-pakai-qris-tap-bayar-mudah-tanpa-perlu-buka-kamera-hp-lagi"
+                                >
+                                    <img
+                                        src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2023/04/12/DNsgdb1/cara-membuat-qris-all-payment-sangat-mudah-untuk-kamu-yang-menjalani-bisnis53.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Tech</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Cara Pakai QRIS Tap: Bayar Mudah
+                                            Tanpa Perlu Buka Kamera Hp Lagi
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Rabu, 14 Agustus 2024 | 09:08 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://news.indozone.id/news/915156343/kamala-harris-meradang-usai-iran-hujani-area-vital-israel-dengan-rudal-hipersonik"
+                                >
+                                    <img
+                                        src="https://static.promediateknologi.id/crop/0x0:0x0/188x113/webp/photo/p2/91/2024/10/03/image2-2404603226.png"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">News</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Kamala Harris Meradang Usai Iran
+                                            Hujani Area Vital Israel dengan
+                                            Rudal Hipersonik
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Kamis, 3 Oktober 2024 | 15:20 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container1">
+                    <div
+                        style="
+                            height: 1px;
+                            width: 100%;
+                            background-color: var(--pinkterang);
+                        "
+                        class="my-4"
+                    ></div>
+                </div>
+                <div class="w-100 mb-3">
+                    <div class="header-item-project container1">
+                        <div>
+                            <p class="badge-project text-poppins mb-1">
+                                Publish Article
+                            </p>
+                            <h1 class="text-slab text-light mb-1">
+                                Olret VIVA
+                            </h1>
+                            <div class="d-flex gap-3">
+                                <a
+                                    target="_blank"
+                                    class="item-link-project"
+                                    href="https://olret.viva.co.id/author/654-novita-meilina"
+                                >
+                                    <img src="img/web.png" alt="website" />
+                                    <p class="m-0 text-light">Website</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-poppins mt-1">
+                            <p class="m-0 text-light">Created in</p>
+                            <p class="m-0 text-pinkterang fw-bold">
+                                2024 - NOW
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container1 mt-3">
+                        <div class="d-flex">
+                            <div
+                                class="vertical-text terang"
+                                style="padding-top: 1em"
+                            >
+                                <p>sample tulisan</p>
+                            </div>
+                            <div
+                                style="flex: 1"
+                                class="container-item-article d-flex flex-column gap-1 text-poppins"
+                            >
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/kuliner/20553-resep-ayam-mentega-gurih-lezat-cocok-buat-anak-anak"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2025/03/25/67e2dc3e6f639-ayam-mentega_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Kulineran
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Resep Ayam Mentega Gurih & Lezat,
+                                            Cocok Buat Anak-anak!
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 25 Maret 2025 - 23:41 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/kuliner/20552-manfaat-buah-kiwi-mulai-jaga-imun-sampai-bantu-mengurangi-penyakit-kronis"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2023/05/27/647167e4c8b96-efek-samping-buah-kiwi_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Kulineran
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Manfaat Buah Kiwi, Mulai Jaga Imun
+                                            Sampai Bantu Mengurangi Penyakit
+                                            Kronis
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 25 Maret 2025 - 23:20 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/kesehatan/20565-kenali-pertanda-tubuh-saat-kamu-sedang-stres-awas-jangan-abai-ke-diri-sendiri"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2023/03/02/64007df235e6a-stress-bekerja_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Kesehatan
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Kenali Pertanda Tubuh Saat Kamu
+                                            Sedang Stres! Awas Jangan Abai ke
+                                            Diri Sendiri
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Rabu, 26 Maret 2025 - 09:53 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/life/20563-tips-rumah-aman-selama-mudik-lebaran-biar-hati-tenang"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2024/01/06/6598b8654b7e1-kenangan-rumah-pertama_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Life</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Tips Rumah Aman Selama Mudik
+                                            Lebaran, Biar Hati Tenang!
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Rabu, 26 Maret 2025 - 08:48 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/kuliner/20540-resep-nugget-ayam-homemade-sehat-dan-super-lezat-bisa-buat-stok-di-kulkas"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2022/06/18/62add0c2f2f79-resep-nugget-ayam-keju-sayur_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Kuliner</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Resep Nugget Ayam Homemade Sehat dan
+                                            Super Lezat, Bisa Buat Stok di
+                                            Kulkas!
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 25 Maret 2025 - 15:25 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://olret.viva.co.id/life/20550-cara-basmi-kecoa-yang-paling-ampuh-langsung-ke-sarangnya"
+                                >
+                                    <img
+                                        src="https://thumb.viva.id/vivaolret/1265x711/2022/07/02/62c05c9b4ae4e-daur-hidup-kecoa_olret.jpg"
+                                        alt=""
+                                    />
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Life</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Cara Basmi Kecoa Yang Paling Ampuh
+                                            Langsung ke Sarangnya!
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            Selasa, 25 Maret 2025 - 23:03 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

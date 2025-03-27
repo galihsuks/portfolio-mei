@@ -92,6 +92,9 @@
     align-items: center;
     gap: 1em;
 }
+.vertical-text.terang {
+    color: var(--pinkterang);
+}
 .vertical-text p {
     font-size: small;
     margin: 0;
@@ -104,6 +107,9 @@
     height: 70px;
     width: 1px;
     background-color: var(--abu);
+}
+.vertical-text.terang::after {
+    background-color: var(--pinkterang);
 }
 @media (max-width: 600px) {
     .vertical-text p {
@@ -160,4 +166,58 @@
     .show-flex-ke-hide {
         display: none;
     }
+}
+
+.btn-play {
+    background-color: var(--pink);
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 2em;
+    color: var(--terang);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-play:hover {
+    background-color: var(--pinkterang);
+    color: var(--pink);
+    transition: 0.3s;
+}
+.container-audio {
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+}
+.container-audio::-webkit-scrollbar {
+    display: none;
+}
+.item-audio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: default;
+    width: fit-content;
+    scroll-snap-align: start;
+}
+.item-audio p {
+    font-weight: 500;
+    color: var(--gelap);
+    line-height: 20px;
+    text-wrap: nowrap;
+}
+.item-audio a {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--abu);
+    line-height: 20px;
+    transition: 0.4s;
+}
+.item-audio a:hover {
+    color: var(--pink);
+    transition: 0.4s;
+}
+.item-audio:hover a {
+    max-height: 25px;
+    transition: 0.4s;
 }
