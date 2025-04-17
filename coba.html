@@ -57,6 +57,16 @@
                 }
             });
 
+            function putar(audioName, event) {
+                if (eval(audioName).paused) {
+                    eval(audioName).play();
+                    playPause.textContent = "⏸️";
+                } else {
+                    eval(audioName).pause();
+                    playPause.textContent = "▶️";
+                }
+            }
+
             audio.addEventListener("timeupdate", () => {
                 seekBar.value = (audio.currentTime / audio.duration) * 100;
                 currentTimeDisplay.textContent = formatTime(audio.currentTime);
