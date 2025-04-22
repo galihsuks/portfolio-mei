@@ -23,6 +23,9 @@
     h1 {
         font-size: 24px;
     }
+    h3 {
+        font-size: 20px;
+    }
     p,
     li {
         font-size: small;
@@ -140,7 +143,8 @@
     transition: 0.1s;
 }
 
-.material-icons {
+.material-icons,
+.material-symbols-outlined {
     display: block;
 }
 
@@ -162,9 +166,21 @@
 .show-flex-ke-hide {
     display: flex;
 }
+.show-block-ke-hide {
+    display: block;
+}
+.hide-ke-show-block {
+    display: none;
+}
 @media (max-width: 600px) {
     .show-flex-ke-hide {
         display: none;
+    }
+    .show-block-ke-hide {
+        display: none;
+    }
+    .hide-ke-show-block {
+        display: block;
     }
 }
 
@@ -234,4 +250,11 @@
 .item-audio:hover a {
     max-height: 25px;
     transition: 0.4s;
+}
+
+hr.bg-pink {
+    border: 1px solid var(--pink);
+}
+hr.bg-pinkterang {
+    border: 1px solid var(--pinkterang);
 }
