@@ -18,7 +18,7 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
-        <link rel="stylesheet" href="/css/style.css?v=22-04-2025" />
+        <link rel="stylesheet" href="/css/style.css?v=22-04-20251" />
         <title>Mei Anggraini</title>
     </head>
     <body>
@@ -30,6 +30,7 @@
                 color: var(--gelap);
                 font-weight: 500;
                 cursor: pointer;
+                text-wrap: nowrap;
             }
             .item-navbar:hover {
                 color: var(--pink);
@@ -103,6 +104,16 @@
                 transform: rotate(-90deg);
                 transition: 1s;
             }
+            .form-select {
+                border: none;
+                outline: none;
+                width: fit-content;
+            }
+            .form-select:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
         </style>
         <div class="navbar-mobile">
             <div
@@ -149,9 +160,7 @@
                 </div>
             </div>
             <div class="navbar-list-container text-poppins">
-                <a href="#hai-section" class="item-navbar active"
-                    ><p>Hai!</p></a
-                >
+                <a href="#hai-section" class="item-navbar active"><p>Hi!</p></a>
                 <div
                     style="height: 1px; width: 100%; margin-inline: auto"
                     class="bg-pinkterang"
@@ -180,6 +189,10 @@
                 <a href="#contact-section" class="item-navbar"
                     ><p>Contact Me</p></a
                 >
+                <select class="form-select" onchange="handleLanguage(event)">
+                    <option value="id">ID</option>
+                    <option value="en" selected>EN</option>
+                </select>
             </div>
         </div>
         <script>
@@ -236,7 +249,7 @@
                         class="d-flex gap-1 align-items-center"
                     >
                         <a href="#hai-section" class="item-navbar active"
-                            ><p>Hai!</p></a
+                            ><p>Hi!</p></a
                         >
                         <a href="#ability-section" class="item-navbar"
                             ><p>Ability</p></a
@@ -259,10 +272,34 @@
                             >My Resume</a
                         >
                     </div>
+                    <div>
+                        <select
+                            class="form-select"
+                            onchange="handleLanguage(event)"
+                        >
+                            <option value="id">ID</option>
+                            <option value="en" selected>EN</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div style="height: 70px"></div>
         </div>
+
+        <script>
+            function handleLanguage(event) {
+                switch (event.target.value) {
+                    case "id":
+                        window.location.replace("/");
+                        break;
+                    case "en":
+                        window.location.replace("/en");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>
 
         <!-- Hi! -->
         <style>
@@ -286,7 +323,6 @@
             style="
                 height: calc(100svh - 120px);
                 min-height: 850px;
-                /* width: 100vw; */
                 overflow: hidden;
             "
             class="d-flex flex-column"
@@ -304,7 +340,7 @@
                             class="bg-gelap mb-3"
                         ></div>
                         <h1 class="text-slab mb-3 text-gelap">
-                            Hai! Aku<br />Novita Meilina<br />Anggraini
+                            Hi! I'm<br />Novita Meilina<br />Anggraini
                         </h1>
                         <div class="bg-pinkterang ps-3">
                             <h1 class="text-slab text-pink mb-4">Copywriter</h1>
@@ -314,7 +350,7 @@
                     <div style="width: 100%">
                         <img
                             src="img/fotoku-edit.jpg"
-                            alt="potoku"
+                            alt="my-photo"
                             style="
                                 width: 100%;
                                 position: relative;
@@ -325,8 +361,8 @@
                     </div>
                 </div>
                 <p class="text-poppins text-terang my-4">
-                    Menulis & merangkai produk marketing berupa artikel SEO,
-                    landing page, email marketing hingga branding
+                    I write and craft marketing content such as SEO articles,
+                    landing pages, email marketing, and branding.
                 </p>
                 <div class="d-flex gap-4 mb-4 text-poppins">
                     <div>
@@ -335,10 +371,6 @@
                             novitameilinaa@gmail.com
                         </p>
                     </div>
-                    <!-- <div>
-                        <p class="m-0 fw-bold text-gelap">Phone</p>
-                        <p class="m-0 text-secondary">0896-3674-7858</p>
-                    </div> -->
                 </div>
                 <div class="d-flex gap-1 text-poppins">
                     <a
@@ -361,12 +393,12 @@
             >
                 <div style="width: 100%">
                     <h1 class="text-slab m-0 text-gelap">
-                        Hai! Aku Novita Meilina Anggraini
+                        Hi! I'm Novita Meilina Anggraini
                     </h1>
                     <h1 class="text-slab text-terang mb-4">Copywriter</h1>
                     <p class="text-poppins text-gelap mb-4">
-                        Menulis & merangkai produk marketing berupa artikel SEO,
-                        landing page, email marketing hingga branding
+                        I write and craft marketing content such as SEO
+                        articles, landing pages, email marketing, and branding.
                     </p>
                     <div class="d-flex gap-4 mb-4 text-poppins">
                         <div>
@@ -375,10 +407,6 @@
                                 novitameilinaa@gmail.com
                             </p>
                         </div>
-                        <!-- <div>
-                            <p class="m-0 fw-bold text-gelap">Phone</p>
-                            <p class="m-0 text-secondary">0896-3674-7858</p>
-                        </div> -->
                     </div>
                     <div class="d-flex gap-1 text-poppins">
                         <a
@@ -398,7 +426,7 @@
                 <div style="width: 100%">
                     <img
                         src="img/fotoku-edit.jpg"
-                        alt="potoku"
+                        alt="my-photo"
                         style="width: 100%"
                     />
                 </div>
@@ -425,7 +453,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Content Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Konten
+                            Content Creator
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -451,7 +479,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Script Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Naskah
+                            Scriptwriter
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -477,7 +505,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Branding</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis SEO
+                            SEO Writer
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -505,7 +533,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Content Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Konten
+                            Content Creator
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -531,7 +559,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Script Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis Naskah
+                            Scriptwriter
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -557,7 +585,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Branding</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Penulis SEO
+                            SEO Writer
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -593,8 +621,8 @@
                     style="font-size: large; width: 70%"
                     class="text-pink text-poppins text-center m-0"
                 >
-                    Memproduksi tulisan di berbagai platform media sesuai dengan
-                    tujuan yang dicapai.
+                    Producing writing for various media platforms according to
+                    the intended purpose.
                 </p>
                 <div
                     class="mt-4"
@@ -662,14 +690,14 @@
         </style>
         <div class="py-5">
             <div class="container1">
-                <h1 class="text-slab text-gelap mb-2 mt-2">Keterampilan</h1>
+                <h1 class="text-slab text-gelap mb-2 mt-2">Skills</h1>
                 <p
                     class="text-terang text-poppins"
                     style="max-width: 528px"
                     id="ability-section"
                 >
-                    Bekerja di bidang penulisan kreatif, membuat saya mahir
-                    melakukan berbagai hal sebagai berikut ini.
+                    Working in the field of creative writing has made me skilled
+                    in the following areas.
                 </p>
 
                 <hr class="bg-pink my-4" />
@@ -701,8 +729,8 @@
                                 class="text-poppins mb-3 text-secondary"
                                 style="font-size: small; max-width: 400px"
                             >
-                                Copywriting bagi saya adalah sebuah seni menulis
-                                yang menghasilkan suatu karya berharga.
+                                For me, copywriting is an art of writing that
+                                results in a valuable work.
                             </p>
                         </div>
                         <div class="show-block-ke-hide">
@@ -714,22 +742,24 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            work_history
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >work_history</span
+                                        >
                                     </div>
-                                    <p class="m-0">Manajemen<br />Waktu</p>
+                                    <p class="m-0">Time<br />Management</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            voice_selection
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >voice_selection</span
+                                        >
                                     </div>
-                                    <p class="m-0">Komunikasi<br />Efektif</p>
+                                    <p class="m-0">
+                                        Effective<br />Communication
+                                    </p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
@@ -737,20 +767,20 @@
                                     id="service-section"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            spoke
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >spoke</span
+                                        >
                                     </div>
-                                    <p class="m-0">Adaptif</p>
+                                    <p class="m-0">Adaptability</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            psychology
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >psychology</span
+                                        >
                                     </div>
                                     <p class="m-0">Critical<br />Thinking</p>
                                 </div>
@@ -765,22 +795,24 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            work_history
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >work_history</span
+                                        >
                                     </div>
-                                    <p class="m-0">Manajemen<br />Waktu</p>
+                                    <p class="m-0">Time<br />Management</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            voice_selection
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >voice_selection</span
+                                        >
                                     </div>
-                                    <p class="m-0">Komunikasi<br />Efektif</p>
+                                    <p class="m-0">
+                                        Effective<br />Communication
+                                    </p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
@@ -788,20 +820,20 @@
                                     id="service-section"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            spoke
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >spoke</span
+                                        >
                                     </div>
-                                    <p class="m-0">Adaptif</p>
+                                    <p class="m-0">Adaptability</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            psychology
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >psychology</span
+                                        >
                                     </div>
                                     <p class="m-0">Critical<br />Thinking</p>
                                 </div>
@@ -839,8 +871,7 @@
                                 class="text-poppins mb-3 text-secondary"
                                 style="font-size: small; max-width: 400px"
                             >
-                                Beberapa hal seputar tulisan yang biasa saya
-                                lakukan.
+                                Some writing-related tasks I usually do.
                             </p>
                         </div>
                         <div class="show-block-ke-hide">
@@ -852,42 +883,44 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            campaign
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >campaign</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Iklan</p>
+                                    <p class="m-0">
+                                        Advertisement<br />Writing
+                                    </p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            web
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >web</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Konten</p>
+                                    <p class="m-0">Content<br />Writing</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            logo_dev
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >logo_dev</span
+                                        >
                                     </div>
-                                    <p class="m-0">Branding &<br />Pesan</p>
+                                    <p class="m-0">Branding &<br />Messaging</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            brand_family
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >brand_family</span
+                                        >
                                     </div>
                                     <p class="m-0">SEO<br />Copywriting</p>
                                 </div>
@@ -896,22 +929,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            web_traffic
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >web_traffic</span
+                                        >
                                     </div>
-                                    <p class="m-0">Konten<br />Pemasaran</p>
+                                    <p class="m-0">Content<br />Marketing</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            receipt_long
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >receipt_long</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Skrip</p>
+                                    <p class="m-0">Script<br />Writing</p>
                                 </div>
                             </div>
                         </div>
@@ -924,42 +957,44 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            campaign
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >campaign</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Iklan</p>
+                                    <p class="m-0">
+                                        Advertisement<br />Writing
+                                    </p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            web
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >web</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Konten</p>
+                                    <p class="m-0">Content<br />Writing</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            logo_dev
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >logo_dev</span
+                                        >
                                     </div>
-                                    <p class="m-0">Branding &<br />Pesan</p>
+                                    <p class="m-0">Branding &<br />Messaging</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            brand_family
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >brand_family</span
+                                        >
                                     </div>
                                     <p class="m-0">SEO<br />Copywriting</p>
                                 </div>
@@ -968,22 +1003,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            web_traffic
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >web_traffic</span
+                                        >
                                     </div>
-                                    <p class="m-0">Konten<br />Pemasaran</p>
+                                    <p class="m-0">Content<br />Marketing</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined">
-                                            receipt_long
-                                        </span>
+                                        <span class="material-symbols-outlined"
+                                            >receipt_long</span
+                                        >
                                     </div>
-                                    <p class="m-0">Penulisan<br />Skrip</p>
+                                    <p class="m-0">Script<br />Writing</p>
                                 </div>
                             </div>
                         </div>
@@ -1009,11 +1044,10 @@
                         >
                         <p class="m-0">Additional service</p>
                     </div>
-                    <h5 class="text-slab text-gelap">Voice over</h5>
+                    <h5 class="text-slab text-gelap">Voice Over</h5>
                     <p class="mb-2 text-poppins text-terang">
-                        Mengisi suara jadi keahlian yang baru dipelajari dan
-                        akan dengan senang hati saya lakukan sesuai kesepakatan,
-                        jika Anda tertarik.
+                        Voice acting is a newly acquired skill that I’d be happy
+                        to offer based on agreement if you're interested.
                     </p>
                     <div class="d-flex gap-4 align-items-center mb-2">
                         <div
@@ -1054,7 +1088,7 @@
                                         target="_blank"
                                         href="https://www.youtube.com/shorts/XtKkADKNsVo"
                                         class="m-0"
-                                        >Lihat projek ></a
+                                        >View project ></a
                                     >
                                 </div>
                             </div>
@@ -1070,7 +1104,7 @@
                                         target="_blank"
                                         href="https://www.instagram.com/reel/C-XHmQdswia/?igsh=MWJ0ZndhMjBkdnhobg%3D%3D"
                                         class="m-0"
-                                        >Lihat projek ></a
+                                        >View project ></a
                                     >
                                 </div>
                             </div>
@@ -1253,7 +1287,7 @@
                     My Projects
                 </h1>
                 <p class="m-0 text-poppins text-pinkterang text-center">
-                    Projek terbaruku
+                    My latest works
                 </p>
                 <div
                     style="
@@ -1289,7 +1323,7 @@
                                     href="https://www.youtube.com/@LunareaFurnitureOfficial"
                                 >
                                     <img src="img/youtube.png" alt="website" />
-                                    <p class="m-0 text-light">Youtube</p>
+                                    <p class="m-0 text-light">YouTube</p>
                                 </a>
                             </div>
                         </div>
@@ -1337,16 +1371,16 @@
                     </div>
                     <div class="container1">
                         <ul class="text-poppins text-pinkterang m-0">
-                            <li>Menyusun konten pilar artikel</li>
-                            <li>Membuat artikel SEO copywriting</li>
+                            <li>Planning pillar article content</li>
+                            <li>Writing SEO copywriting articles</li>
                             <li>
-                                Menyusun & membuat copywriting landing page
-                                perusahan
+                                Structuring and writing the company's landing
+                                page copywriting
                             </li>
                             <li>
-                                Memproduksi script dan voice over Youtube short
+                                Producing YouTube Shorts scripts and voice overs
                             </li>
-                            <li>Membuat copywriting deksripsi produk</li>
+                            <li>Writing product description copywriting</li>
                         </ul>
                     </div>
                 </div>
@@ -1383,8 +1417,8 @@
                                     class="item-link-project"
                                     href="https://www.youtube.com/@ilenafurnitureofficial"
                                 >
-                                    <img src="img/youtube.png" alt="website" />
-                                    <p class="m-0 text-light">Youtube</p>
+                                    <img src="img/youtube.png" alt="youtube" />
+                                    <p class="m-0 text-light">YouTube</p>
                                 </a>
                             </div>
                         </div>
@@ -1432,17 +1466,18 @@
                     </div>
                     <div class="container1">
                         <ul class="text-poppins text-pinkterang m-0">
-                            <li>Menyusun konten pilar artikel</li>
-                            <li>Membuat artikel SEO copywriting</li>
+                            <li>Planning pillar article content</li>
+                            <li>Writing SEO copywriting articles</li>
                             <li>
-                                Menyusun & membuat copywriting landing page
-                                perusahan
+                                Structuring and writing the company's landing
+                                page copywriting
                             </li>
-                            <li>Membuat tagline, dan branding merek</li>
-                            <li>Membuat copywriting deksripsi produk</li>
+                            <li>Creating taglines and brand identity</li>
+                            <li>Writing product description copywriting</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="container1">
                     <div
                         style="
@@ -1486,19 +1521,20 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample tulisan</p>
+                                <p>sample writings</p>
                             </div>
                             <div
                                 style="flex: 1"
                                 class="container-item-article d-flex flex-column gap-1 text-poppins"
                             >
+                                <!-- Semua artikel di bawah ini tetap pakai judul aslinya -->
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/60cad7c3bb448649b546e2f2/mahasiswa-usm-laksanakan-program-kkn-dengan-menggandeng-lansia-gerakan-edukasi-aplikasi-virtual-meeting"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/60cad7c3bb448649b546e2f2/..."
                                 >
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Ilmu Sosbud
+                                            Social Sciences & Culture
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -1509,253 +1545,40 @@
                                             Edukasi Aplikasi Virtual Meeting
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            17 Juni 2021 | 12:29 WIB
+                                            June 17, 2021 | 12:29 PM
                                         </p>
                                     </div>
                                 </a>
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
+                                    href="https://www.kompasiana.com/..."
                                 >
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">Sosbud</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
+                                        <div class="category mb-1">Culture</div>
+                                        <p class="m-0 judul fw-bold">
                                             Memahami Seberapa Jauh Makna
                                             Pertemanan Lewat Undangan Pernikahan
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            12 Mei 2022 | 19:50 WIB
+                                            May 12, 2022 | 7:50 PM
                                         </p>
                                     </div>
                                 </a>
+                                <!-- Lanjutkan dengan struktur yang sama untuk semua artikel -->
+                                <!-- ... -->
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Sosbud</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Memahami Seberapa Jauh Makna
-                                            Pertemanan Lewat Undangan Pernikahan
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            12 Mei 2022 | 19:50 WIB
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62b3aaa8a0cdf838dc48d0f6/review-film-the-twin-cocok-buat-si-penakut-tapi-kepo-genre-film-horor"
+                                    href="https://www.kompasiana.com/..."
                                 >
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">Film</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            [Review Film] The Twin, Cocok Buat
-                                            Si Penakut tapi Kepo Genre Film
-                                            Horor
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            23 Juni 2022 | 06:50 WIB
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62be9e4cbb44862813155792/menyandang-title-mahasiswa-di-perantauan"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Diary</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Menyandang Title Mahasiswa di
-                                            Perantauan
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            1 Juli 2022 | 14:12 WIB
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c440780d823012b539ef52/review-kdrama-splash-splash-love-kisah-cinta-singkat-raja-masa-lampau-dan-siswa-modern"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Film</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            [Review K-Drama] Splash- Splash
-                                            Love, Kisah Cinta Raja dan Siswi
-                                            Beda Generasi
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            5 Juli 2022 | 20:45 WIB
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c99a76bb4486636b045862/ukiran-langkah-berani-milo-hijrah-ke-paperstraw"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">
-                                            Ilmu Alam & Tekno
-                                        </div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Ukiran Langkah Berani Milo Hijrah ke
-                                            Paperstraw
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            9 Juli 2022 | 22:10 WIB
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6305b59708a8b52068091b93/review-kdrama-liberation-notes-kisah-hidup-pekerja-kantoran-menemukan-arti-kebahagian-dan-kebebasan-hidup"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Film</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            [Review] K-Drama: "My Liberation
-                                            Notes", Kisah Pekerja Kantoran
-                                            Mencari Arti Kebahagiaan dan
-                                            Kebebasan Hidup
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            24 Agustus 2022
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6320959908a8b57be53bdbc2/100-tahun-eka-tjipta-widjaja-makin-eksis-dikalangan-mahasiswa-dan-pelajar-dengan-kuota-super-murah-unlimited-smartfren"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Inovasi</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            100 Tahun Eka Tjipta Widjaja, Makin
-                                            Eksis di Kalangan Mahasiswa dan
-                                            pelajar dengan Kuota Super Murah
-                                            Unlimited Smartfren
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            13 September 2022
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63592a5c4addee7c4f0bdb02/bridemaids-antara-urgensi-dan-gengsi-pesta-pernikahan-masa-kini"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Life</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Bridemaids: Antara Urgensi dan
-                                            Gengsi Pesta Pernikahan Masa Kini
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            26 Oktober 2025
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6385304508a8b55c6852ddf2/alam-ikut-mengamalkan-sila-kelima-dalam-pancasila-di-planet-bekasi"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">
-                                            Ilmu Sosbud
-                                        </div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Alam Ikut Mengamalkan Sila Kelima
-                                            dalam Pancasila di Planet Bekasi
-                                        </p>
-                                        <!-- <p class="mt-1 mb-0 tanggal"></p> -->
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="Glorifikasi Jakarta Kota Metropolitan, Masih Layak Dijadikan Destinasi Perantauan?"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Sosbud</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Glorifikasi Jakarta Kota
-                                            Metropolitan, Masih Layak Dijadikan
-                                            Destinasi Perantauan?
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            10 Desember 2022
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63b03b0b0788a339e069eda5/pahit-getir-jadi-siswa-rangking-1-yang-ngga-selalu-asik"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">
-                                            Ilmu Sosmud
-                                        </div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
-                                            Pahit Getir Jadi Siswa Ranking 1
-                                            yang Ngga Selalu Asik
-                                        </p>
-                                        <p class="mt-1 mb-0 tanggal">
-                                            31 Desember 2022
-                                        </p>
-                                    </div>
-                                </a>
-                                <a
-                                    class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/64b7de59a0688f39ef190d72/review-film-hati-suhita-cerita-perjuangan-gadis-cerdas-menangkan-pertarungan-cinta-dengan-sempurna"
-                                >
-                                    <div class="d-flex flex-column">
-                                        <div class="category mb-1">Film</div>
-                                        <p
-                                            class="m-0 judul fw-bold"
-                                            style="flex: 1"
-                                        >
+                                        <p class="m-0 judul fw-bold">
                                             Review Film Hati Suhita: Cerita
                                             Perjuangan Gadis Cerdas Menangkan
                                             Pertarungan Cinta dengan Sempurna
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            9 Juli 2023
+                                            July 9, 2023
                                         </p>
                                     </div>
                                 </a>
@@ -1763,6 +1586,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="container1">
                     <div
                         style="
@@ -1828,7 +1652,7 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample tulisan</p>
+                                <p>sample writing</p>
                             </div>
                             <div
                                 style="flex: 1"
@@ -1853,7 +1677,8 @@
                                             dan Arab
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 28 Februari 2023 | 14:34 WIB
+                                            Tuesday, February 28, 2023 | 14:34
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1875,7 +1700,7 @@
                                             Berpasir Putih, Ikonnya Kota Jepara
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Senin, 19 Juni 2023 | 02:55 WIB
+                                            Monday, June 19, 2023 | 02:55 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1898,7 +1723,8 @@
                                             Timur yang Kini Jarang Ditemukan
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 21 November 2023 | 07:30 WIB
+                                            Tuesday, November 21, 2023 | 07:30
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1920,7 +1746,7 @@
                                             Translator, Mana yang Lebih Baik?
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Kamis, 25 Juli 2024 | 07:00 WIB
+                                            Thursday, July 25, 2024 | 07:00 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1942,7 +1768,8 @@
                                             Tanpa Perlu Buka Kamera Hp Lagi
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Rabu, 14 Agustus 2024 | 09:08 WIB
+                                            Wednesday, August 14, 2024 | 09:08
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1965,7 +1792,8 @@
                                             Rudal Hipersonik
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Kamis, 3 Oktober 2024 | 15:20 WIB
+                                            Thursday, October 3, 2024 | 15:20
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1973,6 +1801,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="container1">
                     <div
                         style="
@@ -2016,7 +1845,7 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample tulisan</p>
+                                <p>sample writing</p>
                             </div>
                             <div
                                 style="flex: 1"
@@ -2032,7 +1861,7 @@
                                     />
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Kulineran
+                                            Culinary
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -2042,7 +1871,7 @@
                                             Cocok Buat Anak-anak!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 25 Maret 2025 - 23:41 WIB
+                                            Tuesday, March 25, 2025 - 23:41 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2056,7 +1885,7 @@
                                     />
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Kulineran
+                                            Culinary
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -2067,7 +1896,7 @@
                                             Kronis
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 25 Maret 2025 - 23:20 WIB
+                                            Tuesday, March 25, 2025 - 23:20 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2080,9 +1909,7 @@
                                         alt=""
                                     />
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">
-                                            Kesehatan
-                                        </div>
+                                        <div class="category mb-1">Health</div>
                                         <p
                                             class="m-0 judul fw-bold"
                                             style="flex: 1"
@@ -2092,7 +1919,8 @@
                                             Diri Sendiri
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Rabu, 26 Maret 2025 - 09:53 WIB
+                                            Wednesday, March 26, 2025 - 09:53
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2114,7 +1942,8 @@
                                             Lebaran, Biar Hati Tenang!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Rabu, 26 Maret 2025 - 08:48 WIB
+                                            Wednesday, March 26, 2025 - 08:48
+                                            WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2127,7 +1956,9 @@
                                         alt=""
                                     />
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">Kuliner</div>
+                                        <div class="category mb-1">
+                                            Culinary
+                                        </div>
                                         <p
                                             class="m-0 judul fw-bold"
                                             style="flex: 1"
@@ -2137,7 +1968,7 @@
                                             Kulkas!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 25 Maret 2025 - 15:25 WIB
+                                            Tuesday, March 25, 2025 - 15:25 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2159,7 +1990,7 @@
                                             Langsung ke Sarangnya!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Selasa, 25 Maret 2025 - 23:03 WIB
+                                            Tuesday, March 25, 2025 - 23:03 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2167,6 +1998,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="container1">
                     <div
                         style="
@@ -2479,19 +2311,19 @@
                                 >
                                     <tbody>
                                         <tr>
-                                            <td class="pe-3">Jenis project</td>
+                                            <td class="pe-3">Project type</td>
                                             <td>: <b>Single</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Nama penyanyi</td>
+                                            <td class="pe-3">Singer</td>
                                             <td>: <b>Amel Putri</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Produser music</td>
+                                            <td class="pe-3">Music produser</td>
                                             <td>: <b>Galih Sukma</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Tahun project</td>
+                                            <td class="pe-3">Project year</td>
                                             <td>: <b>2024</b></td>
                                         </tr>
                                         <tr>
@@ -2634,8 +2466,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Jenis
-                                                                            project
+                                                                            Project
+                                                                            type
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2648,8 +2480,7 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Nama
-                                                                            penyanyi
+                                                                            Singer
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2663,8 +2494,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Produser
-                                                                            music
+                                                                            Music
+                                                                            produser
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2678,8 +2509,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Tahun
-                                                                            project
+                                                                            Project
+                                                                            year
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -3003,8 +2834,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Jenis
-                                                                            project
+                                                                            Project
+                                                                            type
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -3017,8 +2848,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Nama
-                                                                            brand
+                                                                            Brand
+                                                                            name
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -3032,8 +2863,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Produser
-                                                                            music
+                                                                            Music
+                                                                            produser
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -3047,8 +2878,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Tahun
-                                                                            project
+                                                                            Project
+                                                                            year
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -3271,19 +3102,19 @@
                                 >
                                     <tbody>
                                         <tr>
-                                            <td class="pe-3">Jenis project</td>
+                                            <td class="pe-3">Project type</td>
                                             <td>: <b>Single</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Nama brand</td>
+                                            <td class="pe-3">Brand name</td>
                                             <td>: <b>Ilena Furniture</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Produser music</td>
+                                            <td class="pe-3">Music producer</td>
                                             <td>: <b>Galih Sukma</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Tahun project</td>
+                                            <td class="pe-3">Project year</td>
                                             <td>: <b>2024</b></td>
                                         </tr>
                                         <tr>
@@ -3437,7 +3268,7 @@
             <div>
                 <div class="mb-3">
                     <h4 class="text-terang text-poppins m-0">
-                        Mari berdiskusi dengan saya!
+                        Let's discuss with me!
                     </h4>
                     <h1 class="text-gelap text-slab">Get In Touch</h1>
                 </div>

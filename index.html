@@ -14,7 +14,11 @@
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/css/style.css?v=17-04-2025" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
+        <link rel="stylesheet" href="/css/style.css?v=22-04-20251" />
         <title>Mei Anggraini</title>
     </head>
     <body>
@@ -26,6 +30,7 @@
                 color: var(--gelap);
                 font-weight: 500;
                 cursor: pointer;
+                text-wrap: nowrap;
             }
             .item-navbar:hover {
                 color: var(--pink);
@@ -99,6 +104,16 @@
                 transform: rotate(-90deg);
                 transition: 1s;
             }
+            .form-select {
+                border: none;
+                outline: none;
+                width: fit-content;
+            }
+            .form-select:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
         </style>
         <div class="navbar-mobile">
             <div
@@ -136,7 +151,7 @@
                     </div>
                     <div class="d-flex gap-1">
                         <a
-                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1E3TzMdPg1_cHeEZsDdzXqhuxdbauKMmM/view?usp=drive_link"
                             target="_blank"
                             class="btn btn-terang"
                             >My Resume</a
@@ -176,9 +191,14 @@
                 <a href="#contact-section" class="item-navbar"
                     ><p>Contact Me</p></a
                 >
+                <select class="form-select" onchange="handleLanguage(event)">
+                    <option value="id">ID</option>
+                    <option value="en">EN</option>
+                </select>
             </div>
         </div>
         <script>
+            const itemNavbarElm = document.querySelectorAll(".item-navbar");
             const toggleNavbarElm = document.getElementById("toggle-navbar");
             const navbarListContainerElm = document.querySelector(
                 ".navbar-list-container"
@@ -195,6 +215,13 @@
                     navbarListContainerElm.classList.add("show");
                 }
                 bukaNavbar = !bukaNavbar;
+            });
+            itemNavbarElm.forEach((item) => {
+                item.addEventListener("click", () => {
+                    iconPanahNavbarElm.classList.remove("show");
+                    navbarListContainerElm.classList.remove("show");
+                    bukaNavbar = false;
+                });
             });
         </script>
         <div style="height: 70px" class="navbar-mobile-ganjal"></div>
@@ -241,16 +268,40 @@
                     </div>
                     <div class="d-flex gap-1">
                         <a
-                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1E3TzMdPg1_cHeEZsDdzXqhuxdbauKMmM/view?usp=drive_link"
                             target="_blank"
                             class="btn btn-terang"
                             >My Resume</a
                         >
                     </div>
+                    <div>
+                        <select
+                            class="form-select"
+                            onchange="handleLanguage(event)"
+                        >
+                            <option value="id">ID</option>
+                            <option value="en">EN</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div style="height: 70px"></div>
         </div>
+
+        <script>
+            function handleLanguage(event) {
+                switch (event.target.value) {
+                    case "id":
+                        window.location.replace("/");
+                        break;
+                    case "en":
+                        window.location.replace("/en");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>
 
         <!-- Hi! -->
         <style>
@@ -273,7 +324,7 @@
             id="hai-section"
             style="
                 height: calc(100svh - 120px);
-                min-height: 916px;
+                min-height: 850px;
                 /* width: 100vw; */
                 overflow: hidden;
             "
@@ -330,7 +381,7 @@
                 </div>
                 <div class="d-flex gap-1 text-poppins">
                     <a
-                        href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                        href="https://drive.google.com/file/d/1E3TzMdPg1_cHeEZsDdzXqhuxdbauKMmM/view?usp=drive_link"
                         target="_blank"
                         class="btn btn-terang"
                         >Download CV</a
@@ -370,7 +421,7 @@
                     </div>
                     <div class="d-flex gap-1 text-poppins">
                         <a
-                            href="https://drive.google.com/file/d/1sKiPV9AGyjV4G_W-oNYN5xMl7QOecHd0/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1E3TzMdPg1_cHeEZsDdzXqhuxdbauKMmM/view?usp=drive_link"
                             target="_blank"
                             class="btn btn-terang"
                             >Download CV</a
@@ -629,626 +680,438 @@
                     display: flex;
                 }
             }
-        </style>
-        <div class="py-5" id="ability-section">
-            <div
-                class="mt-5 container1 baris-ke-kolom-reverse gap-5 align-items-center"
-            >
-                <div
-                    style="flex: 1; font-size: small"
-                    class="ability-desktop gap-3 text-poppins text-pink fw-bold"
-                >
-                    <div style="flex: 1" class="d-flex flex-column gap-3">
-                        <div
-                            style="
-                                width: 100%;
-                                min-height: 170px;
-                                aspect-ratio: 7 / 8;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/manajemen waktu.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center">Manajemen<br />Waktu</p>
-                        </div>
-                        <div
-                            style="
-                                width: 100%;
-                                min-height: 170px;
-                                aspect-ratio: 7 / 8;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/komunikasi.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center">
-                                Komunikasi<br />Efektif
-                            </p>
-                        </div>
-                    </div>
-                    <div style="flex: 1" class="d-flex flex-column gap-3">
-                        <div
-                            style="
-                                width: 100%;
-                                min-height: 170px;
-                                aspect-ratio: 7 / 8;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/koreksi.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center">
-                                Editing &<br />Proofreading
-                            </p>
-                        </div>
-                        <div
-                            style="
-                                width: 100%;
-                                min-height: 170px;
-                                aspect-ratio: 7 / 8;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/thinking.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center">
-                                Critical<br />Thinking
-                            </p>
-                        </div>
-                    </div>
-                    <div style="flex: 1" class="d-flex gap-3">
-                        <div
-                            style="
-                                width: 100%;
-                                min-width: 150px;
-                                aspect-ratio: 7 / 8;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/ai.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center">
-                                Artificial<br />Intelligence<br />Tools
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    style="flex: 1; font-size: small"
-                    class="ability-mobile flex-column gap-3 text-poppins text-pink fw-bold w-100"
-                >
-                    <div class="d-flex gap-3 align-items-center">
-                        <div
-                            style="
-                                flex: 1;
-                                aspect-ratio: 6 / 7;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/manajemen waktu.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center" style="font-size: 12px">
-                                Manajemen<br />Waktu
-                            </p>
-                        </div>
-                        <div
-                            style="
-                                flex: 1;
-                                aspect-ratio: 6 / 7;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/komunikasi.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center" style="font-size: 12px">
-                                Komunikasi<br />Efektif
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <div
-                            style="
-                                flex: 1;
-                                aspect-ratio: 6 / 7;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/koreksi.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center" style="font-size: 12px">
-                                Editing &<br />Proofreading
-                            </p>
-                        </div>
-                        <div
-                            style="
-                                flex: 1;
-                                aspect-ratio: 6 / 7;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/thinking.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center" style="font-size: 12px">
-                                Critical<br />Thinking
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <div
-                            style="
-                                flex: 1;
-                                aspect-ratio: 2 / 1;
-                                background-color: white;
-                                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                            "
-                            class="d-flex flex-column gap-2 justify-content-center align-items-center"
-                        >
-                            <div class="item-ability">
-                                <img
-                                    class="m-0"
-                                    src="img/ai.png"
-                                    alt="manajemen waktu"
-                                />
-                            </div>
-                            <p class="m-0 text-center" style="font-size: 12px">
-                                Artificial Intelligence<br />Tools
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div style="flex: 1" class="d-flex gap-3">
-                    <div class="vertical-text">
-                        <p>my ability</p>
-                    </div>
-                    <div>
-                        <h1 class="text-slab text-gelap mb-3">
-                            Apa yang bisa saya lakukan?
-                        </h1>
-                        <p class="text-terang mb-3 text-poppins">
-                            Copywriting bagi saya adalah sebuah seni menulis
-                            yang menghasilkan suatu karya berharga.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- services -->
-        <style>
-            .item-service {
-                background-color: var(--pink);
-                width: 70px;
-                height: 70px;
-                border-radius: 140px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 1.3em;
-                transition: 0.3s;
+            .container-softskill {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
             }
-            .item-service img {
-                height: 100%;
+            .container-hardskill {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
             }
-            .item-service:hover {
-                background-color: var(--pink);
-                transition: 0.3s;
+            .container-softskill p,
+            .container-hardskill p {
+                text-wrap: nowrap;
             }
-            .service-header-desktop {
-                display: flex;
-            }
-            .service-header-mobile {
-                display: none;
-            }
-            @media (max-width: 900px) {
-                .service-header-desktop {
-                    display: none;
-                }
-                .service-header-mobile {
-                    display: flex;
-                }
-                .item-service {
-                    width: 50px;
-                    height: 50px;
-                    padding: 0.9em;
+            @media (max-width: 700px) {
+                .container-hardskill {
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
         </style>
-        <div class="py-5 container1" id="service-section">
-            <div class="service-header-desktop gap-3 w-50">
-                <div class="vertical-text">
-                    <p>services</p>
-                </div>
-                <div>
-                    <h1 class="text-slab text-gelap mb-3">
-                        Layanan apa yang saya berikan?
-                    </h1>
-                    <p class="text-terang mb-3 text-poppins">
-                        Beberapa hal seputar tulisan yang biasa saya lakukan.
-                    </p>
-                </div>
-            </div>
-            <div class="service-header-mobile gap-3 mb-4" style="width: 70%">
-                <div class="vertical-text">
-                    <p>services</p>
-                </div>
-                <div>
-                    <h1 class="text-slab text-gelap mb-3">
-                        Layanan apa yang saya berikan?
-                    </h1>
-                    <p class="text-terang mb-3 text-poppins">
-                        Beberapa hal seputar tulisan yang biasa saya lakukan.
-                    </p>
-                </div>
-            </div>
-            <div
-                class="service-header-desktop gap-3 flex-column mb-4"
-                style="position: relative; z-index: 3"
-            >
-                <div
-                    style="font-size: small"
-                    class="d-flex gap-3 text-poppins text-gelap fw-bold"
+        <div class="py-5">
+            <div class="container1">
+                <h1 class="text-slab text-gelap mb-2 mt-2">Keterampilan</h1>
+                <p
+                    class="text-terang text-poppins"
+                    style="max-width: 528px"
+                    id="ability-section"
                 >
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/iklan.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">Penulisan<br />Iklan</p>
-                    </div>
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/konten.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">Penulisan<br />Konten</p>
-                    </div>
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/branding.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">Branding &<br />Pesan</p>
-                    </div>
-                </div>
-                <div
-                    style="font-size: small"
-                    class="d-flex gap-3 text-poppins text-gelap fw-bold"
-                >
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/seo.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">SEO<br />Copywriting</p>
-                    </div>
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/script.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">Penulisan<br />Skrip</p>
-                    </div>
-                    <div
-                        style="
-                            flex: 1;
-                            aspect-ratio: 2 / 1;
-                            background-color: white;
-                            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                        "
-                        class="d-flex gap-3 justify-content-center align-items-center"
-                    >
-                        <div class="item-service">
-                            <img
-                                class="m-0"
-                                src="img/konten.png"
-                                alt="manajemen waktu"
-                            />
-                        </div>
-                        <p class="m-0">Konten<br />Pemasaran</p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="service-header-mobile gap-2 flex-column mb-4 fw-bold text-poppins"
-                style="position: relative; z-index: 3"
-            >
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center py-3 px-4"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/konten.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">Penulisan Konten</p>
-                </div>
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center py-3 px-4"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/branding.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">Branding & Pesan</p>
-                </div>
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center px-4 py-3"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/iklan.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">Penulisan Iklan</p>
-                </div>
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center px-4 py-3"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/seo.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">SEO Copywriting</p>
-                </div>
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center px-4 py-3"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/script.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">Penulisan Skrip</p>
-                </div>
-                <div
-                    style="
-                        flex: 1;
-                        background-color: white;
-                        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-                    "
-                    class="d-flex gap-3 align-items-center px-4 py-3"
-                >
-                    <div class="item-service">
-                        <img
-                            class="m-0"
-                            src="img/konten.png"
-                            alt="manajemen waktu"
-                        />
-                    </div>
-                    <p class="m-0">Jasa Editing & Proofreading</p>
-                </div>
-            </div>
-            <div
-                class="border-pink rounded-4 px-4 py-3 mb-5"
-                style="border: 3px solid var(--pink)"
-            >
-                <div
-                    style="
-                        background-color: white;
-                        width: fit-content;
-                        position: absolute;
-                        transform: translate(20px, -30px);
-                    "
-                    class="text-pink px-3 d-flex align-items-center gap-1 fw-bold text-poppins"
-                >
-                    <i style="font-size: 17px" class="material-icons fw-bold"
-                        >add</i
-                    >
-                    <p class="m-0">Additional service</p>
-                </div>
-                <h5 class="text-slab text-gelap">Voice over</h5>
-                <p class="mb-2 text-poppins text-terang">
-                    Mengisi suara jadi keahlian yang baru dipelajari dan akan
-                    dengan senang hati saya lakukan sesuai kesepakatan, jika
-                    Anda tertarik.
+                    Bekerja di bidang penulisan kreatif, membuat saya mahir
+                    melakukan berbagai hal sebagai berikut ini.
                 </p>
-                <div class="d-flex gap-4 align-items-center mb-2">
-                    <div
-                        style="
-                            height: 1px;
-                            flex: 2;
-                            background-color: var(--pink);
-                        "
-                    ></div>
-                    <p class="text-slab m-0 text-abu" style="font-size: small">
-                        sample audio
-                    </p>
-                    <div
-                        style="
-                            height: 1px;
-                            flex: 1;
-                            background-color: var(--pink);
-                        "
-                    ></div>
+
+                <hr class="bg-pink my-4" />
+
+                <div class="d-flex gap-4 align-items-center mb-1 text-pink">
+                    <span class="d-block">
+                        <i class="material-icons">chevron_right</i>
+                    </span>
+                    <h3 class="text-slab m-0">Ability</h3>
                 </div>
-                <div class="container-audio">
-                    <div
-                        style="min-width: fit-content; width: 100%"
-                        class="d-flex gap-5 justify-content-center align-items-center"
-                    >
-                        <div class="item-audio">
-                            <div class="btn-play">
-                                <i class="material-icons">play_arrow</i>
-                            </div>
-                            <div>
-                                <p class="m-0 text-poppins">Youtube Lunarea</p>
-                                <a
-                                    target="_blank"
-                                    href="https://www.youtube.com/shorts/XtKkADKNsVo"
-                                    class="m-0"
-                                    >Lihat projek ></a
+                <div class="d-flex gap-4 align-items-center">
+                    <span class="show-block-ke-hide">
+                        <i
+                            class="material-icons"
+                            style="color: rgba(0, 0, 0, 0)"
+                            >chevron_right</i
+                        >
+                    </span>
+                    <div class="w-100">
+                        <div class="d-flex w-100 gap-4">
+                            <span class="hide-ke-show-block">
+                                <i
+                                    class="material-icons"
+                                    style="color: rgba(0, 0, 0, 0)"
+                                    >chevron_right</i
                                 >
+                            </span>
+                            <p
+                                class="text-poppins mb-3 text-secondary"
+                                style="font-size: small; max-width: 400px"
+                            >
+                                Copywriting bagi saya adalah sebuah seni menulis
+                                yang menghasilkan suatu karya berharga.
+                            </p>
+                        </div>
+                        <div class="show-block-ke-hide">
+                            <div
+                                class="container-softskill text-poppins gap-2 fw-semibold text-pink"
+                            >
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            work_history
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Manajemen<br />Waktu</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            voice_selection
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Komunikasi<br />Efektif</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                    id="service-section"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            spoke
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Adaptif</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            psychology
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Critical<br />Thinking</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="item-audio">
-                            <div class="btn-play">
-                                <i class="material-icons">play_arrow</i>
-                            </div>
-                            <div>
-                                <p class="m-0 text-poppins">
-                                    Instagram Lunarea
-                                </p>
-                                <a
-                                    target="_blank"
-                                    href="https://www.instagram.com/reel/C-XHmQdswia/?igsh=MWJ0ZndhMjBkdnhobg%3D%3D"
-                                    class="m-0"
-                                    >Lihat projek ></a
+                        <div class="hide-ke-show-block">
+                            <div
+                                class="container-softskill text-poppins gap-2 fw-semibold text-pink"
+                            >
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
+                                    style="border: 1px solid var(--pinkterang)"
                                 >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            work_history
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Manajemen<br />Waktu</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            voice_selection
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Komunikasi<br />Efektif</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                    id="service-section"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            spoke
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Adaptif</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            psychology
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Critical<br />Thinking</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="bg-pink my-4" />
+
+                <div class="d-flex gap-4 align-items-center mb-1 text-pink">
+                    <span class="d-block">
+                        <i class="material-icons">chevron_right</i>
+                    </span>
+                    <h3 class="text-slab m-0">Services</h3>
+                </div>
+                <div class="d-flex gap-4 align-items-center mb-4">
+                    <span class="show-block-ke-hide">
+                        <i
+                            class="material-icons"
+                            style="color: rgba(0, 0, 0, 0)"
+                            >chevron_right</i
+                        >
+                    </span>
+                    <div class="w-100">
+                        <div class="d-flex w-100 gap-4">
+                            <span class="hide-ke-show-block">
+                                <i
+                                    class="material-icons"
+                                    style="color: rgba(0, 0, 0, 0)"
+                                    >chevron_right</i
+                                >
+                            </span>
+                            <p
+                                class="text-poppins mb-3 text-secondary"
+                                style="font-size: small; max-width: 400px"
+                            >
+                                Beberapa hal seputar tulisan yang biasa saya
+                                lakukan.
+                            </p>
+                        </div>
+                        <div class="show-block-ke-hide">
+                            <div
+                                class="container-hardskill text-poppins gap-2 fw-semibold text-pink"
+                            >
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            campaign
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Iklan</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            web
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Konten</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            logo_dev
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Branding &<br />Pesan</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            brand_family
+                                        </span>
+                                    </div>
+                                    <p class="m-0">SEO<br />Copywriting</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            web_traffic
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Konten<br />Pemasaran</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            receipt_long
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Skrip</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-ke-show-block">
+                            <div
+                                class="container-hardskill text-poppins gap-2 fw-semibold text-pink"
+                            >
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            campaign
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Iklan</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            web
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Konten</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            logo_dev
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Branding &<br />Pesan</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            brand_family
+                                        </span>
+                                    </div>
+                                    <p class="m-0">SEO<br />Copywriting</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            web_traffic
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Konten<br />Pemasaran</p>
+                                </div>
+                                <div
+                                    class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
+                                    style="border: 1px solid var(--pinkterang)"
+                                >
+                                    <div>
+                                        <span class="material-symbols-outlined">
+                                            receipt_long
+                                        </span>
+                                    </div>
+                                    <p class="m-0">Penulisan<br />Skrip</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-pink rounded-4 px-4 py-3 mt-2 mb-4 mx-auto"
+                    style="border: 3px solid var(--pink); max-width: 754px"
+                >
+                    <div
+                        style="
+                            background-color: white;
+                            width: fit-content;
+                            position: absolute;
+                            transform: translate(20px, -30px);
+                        "
+                        class="text-pink px-3 d-flex align-items-center gap-1 fw-bold text-poppins"
+                    >
+                        <i
+                            style="font-size: 17px"
+                            class="material-icons fw-bold"
+                            >add</i
+                        >
+                        <p class="m-0">Additional service</p>
+                    </div>
+                    <h5 class="text-slab text-gelap">Voice over</h5>
+                    <p class="mb-2 text-poppins text-terang">
+                        Mengisi suara jadi keahlian yang baru dipelajari dan
+                        akan dengan senang hati saya lakukan sesuai kesepakatan,
+                        jika Anda tertarik.
+                    </p>
+                    <div class="d-flex gap-4 align-items-center mb-2">
+                        <div
+                            style="
+                                height: 1px;
+                                flex: 2;
+                                background-color: var(--pink);
+                            "
+                        ></div>
+                        <p
+                            class="text-slab m-0 text-abu"
+                            style="font-size: small"
+                        >
+                            sample audio
+                        </p>
+                        <div
+                            style="
+                                height: 1px;
+                                flex: 1;
+                                background-color: var(--pink);
+                            "
+                        ></div>
+                    </div>
+                    <div class="container-audio">
+                        <div
+                            style="min-width: fit-content; width: 100%"
+                            class="d-flex gap-5 justify-content-center align-items-center"
+                        >
+                            <div class="item-audio">
+                                <div class="btn-play">
+                                    <i class="material-icons">play_arrow</i>
+                                </div>
+                                <div>
+                                    <p class="m-0 text-poppins">
+                                        Youtube Lunarea
+                                    </p>
+                                    <a
+                                        target="_blank"
+                                        href="https://www.youtube.com/shorts/XtKkADKNsVo"
+                                        class="m-0"
+                                        >Lihat projek ></a
+                                    >
+                                </div>
+                            </div>
+                            <div class="item-audio">
+                                <div class="btn-play">
+                                    <i class="material-icons">play_arrow</i>
+                                </div>
+                                <div>
+                                    <p class="m-0 text-poppins">
+                                        Instagram Lunarea
+                                    </p>
+                                    <a
+                                        target="_blank"
+                                        href="https://www.instagram.com/reel/C-XHmQdswia/?igsh=MWJ0ZndhMjBkdnhobg%3D%3D"
+                                        class="m-0"
+                                        >Lihat projek ></a
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>

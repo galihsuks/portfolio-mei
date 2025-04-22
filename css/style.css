@@ -120,6 +120,10 @@
     }
 }
 
+.btn {
+    text-wrap: nowrap;
+}
+
 .btn-terang {
     padding-inline: 1em;
     background-color: var(--pink);
