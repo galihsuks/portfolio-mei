@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous"
         />
-        <link rel="icon" type="image/x-png" href="../img/mei.png" />
+        <link rel="icon" type="image/x-png" href="img/mei.png" />
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
@@ -132,7 +132,7 @@
                 >
                     <div>
                         <!-- <h5 class="m-0 text-pink">Mei</h5> -->
-                        <img src="../img/mei.png" alt="" style="height: 30px" />
+                        <img src="img/mei.png" alt="" style="height: 30px" />
                     </div>
                     <div
                         style="flex: 1"
@@ -160,7 +160,9 @@
                 </div>
             </div>
             <div class="navbar-list-container text-poppins">
-                <a href="#hai-section" class="item-navbar active"><p>Hi!</p></a>
+                <a href="#hai-section" class="item-navbar active"
+                    ><p>Hai!</p></a
+                >
                 <div
                     style="height: 1px; width: 100%; margin-inline: auto"
                     class="bg-pinkterang"
@@ -191,7 +193,7 @@
                 >
                 <select class="form-select" onchange="handleLanguage(event)">
                     <option value="id">ID</option>
-                    <option value="en" selected>EN</option>
+                    <option value="en">EN</option>
                 </select>
             </div>
         </div>
@@ -199,7 +201,7 @@
             const itemNavbarElm = document.querySelectorAll(".item-navbar");
             const toggleNavbarElm = document.getElementById("toggle-navbar");
             const navbarListContainerElm = document.querySelector(
-                ".navbar-list-container"
+                ".navbar-list-container",
             );
             const iconPanahNavbarElm =
                 document.getElementById("icon-panah-navbar");
@@ -242,14 +244,14 @@
                 >
                     <div>
                         <!-- <h5 class="m-0 text-pink">Mei</h5> -->
-                        <img src="../img/mei.png" alt="" style="height: 30px" />
+                        <img src="img/mei.png" alt="" style="height: 30px" />
                     </div>
                     <div
                         style="flex: 1"
                         class="d-flex gap-1 align-items-center"
                     >
                         <a href="#hai-section" class="item-navbar active"
-                            ><p>Hi!</p></a
+                            ><p>Hai!</p></a
                         >
                         <a href="#ability-section" class="item-navbar"
                             ><p>Ability</p></a
@@ -278,7 +280,7 @@
                             onchange="handleLanguage(event)"
                         >
                             <option value="id">ID</option>
-                            <option value="en" selected>EN</option>
+                            <option value="en">EN</option>
                         </select>
                     </div>
                 </div>
@@ -290,10 +292,10 @@
             function handleLanguage(event) {
                 switch (event.target.value) {
                     case "id":
-                        window.location.replace("/");
+                        window.location.replace("/id");
                         break;
                     case "en":
-                        window.location.replace("/en");
+                        window.location.replace("/");
                         break;
                     default:
                         break;
@@ -323,6 +325,7 @@
             style="
                 height: calc(100svh - 120px);
                 min-height: 850px;
+                /* width: 100vw; */
                 overflow: hidden;
             "
             class="d-flex flex-column"
@@ -340,7 +343,7 @@
                             class="bg-gelap mb-3"
                         ></div>
                         <h1 class="text-slab mb-3 text-gelap">
-                            Hi! I'm<br />Novita Meilina<br />Anggraini
+                            Hai! Aku<br />Novita Meilina<br />Anggraini
                         </h1>
                         <div class="bg-pinkterang ps-3">
                             <h1 class="text-slab text-pink mb-4">Copywriter</h1>
@@ -349,8 +352,8 @@
                     <div style="width: 40%"></div>
                     <div style="width: 100%">
                         <img
-                            src="../img/fotoku-edit.jpg"
-                            alt="my-photo"
+                            src="img/fotoku-edit.jpg"
+                            alt="potoku"
                             style="
                                 width: 100%;
                                 position: relative;
@@ -361,8 +364,8 @@
                     </div>
                 </div>
                 <p class="text-poppins text-terang my-4">
-                    I write and craft marketing content such as SEO articles,
-                    landing pages, email marketing, and branding.
+                    Menulis & merangkai produk marketing berupa artikel SEO,
+                    landing page, email marketing hingga branding
                 </p>
                 <div class="d-flex gap-4 mb-4 text-poppins">
                     <div>
@@ -371,6 +374,10 @@
                             novitameilinaa@gmail.com
                         </p>
                     </div>
+                    <!-- <div>
+                        <p class="m-0 fw-bold text-gelap">Phone</p>
+                        <p class="m-0 text-secondary">0896-3674-7858</p>
+                    </div> -->
                 </div>
                 <div class="d-flex gap-1 text-poppins">
                     <a
@@ -393,12 +400,12 @@
             >
                 <div style="width: 100%">
                     <h1 class="text-slab m-0 text-gelap">
-                        Hi! I'm Novita Meilina Anggraini
+                        Hai! Aku Novita Meilina Anggraini
                     </h1>
                     <h1 class="text-slab text-terang mb-4">Copywriter</h1>
                     <p class="text-poppins text-gelap mb-4">
-                        I write and craft marketing content such as SEO
-                        articles, landing pages, email marketing, and branding.
+                        Menulis & merangkai produk marketing berupa artikel SEO,
+                        landing page, email marketing hingga branding
                     </p>
                     <div class="d-flex gap-4 mb-4 text-poppins">
                         <div>
@@ -407,6 +414,10 @@
                                 novitameilinaa@gmail.com
                             </p>
                         </div>
+                        <!-- <div>
+                            <p class="m-0 fw-bold text-gelap">Phone</p>
+                            <p class="m-0 text-secondary">0896-3674-7858</p>
+                        </div> -->
                     </div>
                     <div class="d-flex gap-1 text-poppins">
                         <a
@@ -425,8 +436,8 @@
                 </div>
                 <div style="width: 100%">
                     <img
-                        src="../img/fotoku-edit.jpg"
-                        alt="my-photo"
+                        src="img/fotoku-edit.jpg"
+                        alt="potoku"
                         style="width: 100%"
                     />
                 </div>
@@ -453,7 +464,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Content Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Content Creator
+                            Penulis Konten
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -479,7 +490,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Script Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Scriptwriter
+                            Penulis Naskah
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -505,7 +516,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Branding</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            SEO Writer
+                            Penulis SEO
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -533,7 +544,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Content Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Content Creator
+                            Penulis Konten
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -559,7 +570,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Script Writing</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            Scriptwriter
+                            Penulis Naskah
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -585,7 +596,7 @@
                     <div style="flex: 1">
                         <p class="m-0 fw-bold">Branding</p>
                         <p class="text-secondary m-0" style="font-size: small">
-                            SEO Writer
+                            Penulis SEO
                         </p>
                     </div>
                     <div class="text-secondary">
@@ -621,8 +632,8 @@
                     style="font-size: large; width: 70%"
                     class="text-pink text-poppins text-center m-0"
                 >
-                    Producing writing for various media platforms according to
-                    the intended purpose.
+                    Memproduksi tulisan di berbagai platform media sesuai dengan
+                    tujuan yang dicapai.
                 </p>
                 <div
                     class="mt-4"
@@ -690,14 +701,14 @@
         </style>
         <div class="py-5">
             <div class="container1">
-                <h1 class="text-slab text-gelap mb-2 mt-2">Skills</h1>
+                <h1 class="text-slab text-gelap mb-2 mt-2">Keterampilan</h1>
                 <p
                     class="text-terang text-poppins"
                     style="max-width: 528px"
                     id="ability-section"
                 >
-                    Working in the field of creative writing has made me skilled
-                    in the following areas.
+                    Bekerja di bidang penulisan kreatif, membuat saya mahir
+                    melakukan berbagai hal sebagai berikut ini.
                 </p>
 
                 <hr class="bg-pink my-4" />
@@ -729,8 +740,8 @@
                                 class="text-poppins mb-3 text-secondary"
                                 style="font-size: small; max-width: 400px"
                             >
-                                For me, copywriting is an art of writing that
-                                results in a valuable work.
+                                Copywriting bagi saya adalah sebuah seni menulis
+                                yang menghasilkan suatu karya berharga.
                             </p>
                         </div>
                         <div class="show-block-ke-hide">
@@ -742,24 +753,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >work_history</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            work_history
+                                        </span>
                                     </div>
-                                    <p class="m-0">Time<br />Management</p>
+                                    <p class="m-0">Manajemen<br />Waktu</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >voice_selection</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            voice_selection
+                                        </span>
                                     </div>
-                                    <p class="m-0">
-                                        Effective<br />Communication
-                                    </p>
+                                    <p class="m-0">Komunikasi<br />Efektif</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
@@ -767,20 +776,20 @@
                                     id="service-section"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >spoke</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            spoke
+                                        </span>
                                     </div>
-                                    <p class="m-0">Adaptability</p>
+                                    <p class="m-0">Adaptif</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >psychology</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            psychology
+                                        </span>
                                     </div>
                                     <p class="m-0">Critical<br />Thinking</p>
                                 </div>
@@ -795,24 +804,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >work_history</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            work_history
+                                        </span>
                                     </div>
-                                    <p class="m-0">Time<br />Management</p>
+                                    <p class="m-0">Manajemen<br />Waktu</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >voice_selection</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            voice_selection
+                                        </span>
                                     </div>
-                                    <p class="m-0">
-                                        Effective<br />Communication
-                                    </p>
+                                    <p class="m-0">Komunikasi<br />Efektif</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
@@ -820,20 +827,20 @@
                                     id="service-section"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >spoke</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            spoke
+                                        </span>
                                     </div>
-                                    <p class="m-0">Adaptability</p>
+                                    <p class="m-0">Adaptif</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center justify-content-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >psychology</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            psychology
+                                        </span>
                                     </div>
                                     <p class="m-0">Critical<br />Thinking</p>
                                 </div>
@@ -871,7 +878,8 @@
                                 class="text-poppins mb-3 text-secondary"
                                 style="font-size: small; max-width: 400px"
                             >
-                                Some writing-related tasks I usually do.
+                                Beberapa hal seputar tulisan yang biasa saya
+                                lakukan.
                             </p>
                         </div>
                         <div class="show-block-ke-hide">
@@ -883,44 +891,42 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >campaign</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            campaign
+                                        </span>
                                     </div>
-                                    <p class="m-0">
-                                        Advertisement<br />Writing
-                                    </p>
+                                    <p class="m-0">Penulisan<br />Iklan</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >web</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            web
+                                        </span>
                                     </div>
-                                    <p class="m-0">Content<br />Writing</p>
+                                    <p class="m-0">Penulisan<br />Konten</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >logo_dev</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            logo_dev
+                                        </span>
                                     </div>
-                                    <p class="m-0">Branding &<br />Messaging</p>
+                                    <p class="m-0">Branding &<br />Pesan</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >brand_family</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            brand_family
+                                        </span>
                                     </div>
                                     <p class="m-0">SEO<br />Copywriting</p>
                                 </div>
@@ -929,22 +935,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >web_traffic</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            web_traffic
+                                        </span>
                                     </div>
-                                    <p class="m-0">Content<br />Marketing</p>
+                                    <p class="m-0">Konten<br />Pemasaran</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-5 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >receipt_long</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            receipt_long
+                                        </span>
                                     </div>
-                                    <p class="m-0">Script<br />Writing</p>
+                                    <p class="m-0">Penulisan<br />Skrip</p>
                                 </div>
                             </div>
                         </div>
@@ -957,44 +963,42 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >campaign</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            campaign
+                                        </span>
                                     </div>
-                                    <p class="m-0">
-                                        Advertisement<br />Writing
-                                    </p>
+                                    <p class="m-0">Penulisan<br />Iklan</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >web</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            web
+                                        </span>
                                     </div>
-                                    <p class="m-0">Content<br />Writing</p>
+                                    <p class="m-0">Penulisan<br />Konten</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >logo_dev</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            logo_dev
+                                        </span>
                                     </div>
-                                    <p class="m-0">Branding &<br />Messaging</p>
+                                    <p class="m-0">Branding &<br />Pesan</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >brand_family</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            brand_family
+                                        </span>
                                     </div>
                                     <p class="m-0">SEO<br />Copywriting</p>
                                 </div>
@@ -1003,22 +1007,22 @@
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >web_traffic</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            web_traffic
+                                        </span>
                                     </div>
-                                    <p class="m-0">Content<br />Marketing</p>
+                                    <p class="m-0">Konten<br />Pemasaran</p>
                                 </div>
                                 <div
                                     class="baris-ke-kolom gap-3 py-4 px-4 align-items-center"
                                     style="border: 1px solid var(--pinkterang)"
                                 >
                                     <div>
-                                        <span class="material-symbols-outlined"
-                                            >receipt_long</span
-                                        >
+                                        <span class="material-symbols-outlined">
+                                            receipt_long
+                                        </span>
                                     </div>
-                                    <p class="m-0">Script<br />Writing</p>
+                                    <p class="m-0">Penulisan<br />Skrip</p>
                                 </div>
                             </div>
                         </div>
@@ -1044,10 +1048,11 @@
                         >
                         <p class="m-0">Additional service</p>
                     </div>
-                    <h5 class="text-slab text-gelap">Voice Over</h5>
+                    <h5 class="text-slab text-gelap">Voice over</h5>
                     <p class="mb-2 text-poppins text-terang">
-                        Voice acting is a newly acquired skill that I’d be happy
-                        to offer based on agreement if you're interested.
+                        Mengisi suara jadi keahlian yang baru dipelajari dan
+                        akan dengan senang hati saya lakukan sesuai kesepakatan,
+                        jika Anda tertarik.
                     </p>
                     <div class="d-flex gap-4 align-items-center mb-2">
                         <div
@@ -1088,7 +1093,7 @@
                                         target="_blank"
                                         href="https://www.youtube.com/shorts/XtKkADKNsVo"
                                         class="m-0"
-                                        >View project ></a
+                                        >Lihat projek ></a
                                     >
                                 </div>
                             </div>
@@ -1104,7 +1109,7 @@
                                         target="_blank"
                                         href="https://www.instagram.com/reel/C-XHmQdswia/?igsh=MWJ0ZndhMjBkdnhobg%3D%3D"
                                         class="m-0"
-                                        >View project ></a
+                                        >Lihat projek ></a
                                     >
                                 </div>
                             </div>
@@ -1287,7 +1292,7 @@
                     My Projects
                 </h1>
                 <p class="m-0 text-poppins text-pinkterang text-center">
-                    My latest works
+                    Projek terbaruku
                 </p>
                 <div
                     style="
@@ -1314,7 +1319,7 @@
                                     class="item-link-project"
                                     href="https://lunareafurniture.com/"
                                 >
-                                    <img src="../img/web.png" alt="website" />
+                                    <img src="img/web.png" alt="website" />
                                     <p class="m-0 text-light">Website</p>
                                 </a>
                                 <a
@@ -1322,11 +1327,8 @@
                                     class="item-link-project"
                                     href="https://www.youtube.com/@LunareaFurnitureOfficial"
                                 >
-                                    <img
-                                        src="../img/youtube.png"
-                                        alt="website"
-                                    />
-                                    <p class="m-0 text-light">YouTube</p>
+                                    <img src="img/youtube.png" alt="website" />
+                                    <p class="m-0 text-light">Youtube</p>
                                 </a>
                             </div>
                         </div>
@@ -1344,28 +1346,28 @@
                         <div class="container-slide-project">
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/lunarea1.png"
+                                    src="img/projects/lunarea1.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/lunarea2.png"
+                                    src="img/projects/lunarea2.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/lunarea3.png"
+                                    src="img/projects/lunarea3.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/lunarea4.png"
+                                    src="img/projects/lunarea4.png"
                                     alt=""
                                     style="width: 100%"
                                 />
@@ -1374,16 +1376,16 @@
                     </div>
                     <div class="container1">
                         <ul class="text-poppins text-pinkterang m-0">
-                            <li>Planning pillar article content</li>
-                            <li>Writing SEO copywriting articles</li>
+                            <li>Menyusun konten pilar artikel</li>
+                            <li>Membuat artikel SEO copywriting</li>
                             <li>
-                                Structuring and writing the company's landing
-                                page copywriting
+                                Menyusun & membuat copywriting landing page
+                                perusahan
                             </li>
                             <li>
-                                Producing YouTube Shorts scripts and voice overs
+                                Memproduksi script dan voice over Youtube short
                             </li>
-                            <li>Writing product description copywriting</li>
+                            <li>Membuat copywriting deksripsi produk</li>
                         </ul>
                     </div>
                 </div>
@@ -1412,7 +1414,7 @@
                                     class="item-link-project"
                                     href="https://ilenafurniture.com/"
                                 >
-                                    <img src="../img/web.png" alt="website" />
+                                    <img src="img/web.png" alt="website" />
                                     <p class="m-0 text-light">Website</p>
                                 </a>
                                 <a
@@ -1420,11 +1422,8 @@
                                     class="item-link-project"
                                     href="https://www.youtube.com/@ilenafurnitureofficial"
                                 >
-                                    <img
-                                        src="../img/youtube.png"
-                                        alt="youtube"
-                                    />
-                                    <p class="m-0 text-light">YouTube</p>
+                                    <img src="img/youtube.png" alt="website" />
+                                    <p class="m-0 text-light">Youtube</p>
                                 </a>
                             </div>
                         </div>
@@ -1442,28 +1441,28 @@
                         <div class="container-slide-project">
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/ilena1.png"
+                                    src="img/projects/ilena1.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/ilena2.png"
+                                    src="img/projects/ilena2.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/ilena3.png"
+                                    src="img/projects/ilena3.png"
                                     alt=""
                                     style="width: 100%"
                                 />
                             </div>
                             <div class="item-slide-project">
                                 <img
-                                    src="../img/projects/ilena4.png"
+                                    src="img/projects/ilena4.png"
                                     alt=""
                                     style="width: 100%"
                                 />
@@ -1472,18 +1471,17 @@
                     </div>
                     <div class="container1">
                         <ul class="text-poppins text-pinkterang m-0">
-                            <li>Planning pillar article content</li>
-                            <li>Writing SEO copywriting articles</li>
+                            <li>Menyusun konten pilar artikel</li>
+                            <li>Membuat artikel SEO copywriting</li>
                             <li>
-                                Structuring and writing the company's landing
-                                page copywriting
+                                Menyusun & membuat copywriting landing page
+                                perusahan
                             </li>
-                            <li>Creating taglines and brand identity</li>
-                            <li>Writing product description copywriting</li>
+                            <li>Membuat tagline, dan branding merek</li>
+                            <li>Membuat copywriting deksripsi produk</li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="container1">
                     <div
                         style="
@@ -1509,7 +1507,7 @@
                                     class="item-link-project"
                                     href="https://www.kompasiana.com/novitameilinaanggraini9619"
                                 >
-                                    <img src="../img/web.png" alt="website" />
+                                    <img src="img/web.png" alt="website" />
                                     <p class="m-0 text-light">Website</p>
                                 </a>
                             </div>
@@ -1527,20 +1525,19 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample writings</p>
+                                <p>sample tulisan</p>
                             </div>
                             <div
                                 style="flex: 1"
                                 class="container-item-article d-flex flex-column gap-1 text-poppins"
                             >
-                                <!-- Semua artikel di bawah ini tetap pakai judul aslinya -->
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/60cad7c3bb448649b546e2f2/..."
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/60cad7c3bb448649b546e2f2/mahasiswa-usm-laksanakan-program-kkn-dengan-menggandeng-lansia-gerakan-edukasi-aplikasi-virtual-meeting"
                                 >
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Social Sciences & Culture
+                                            Ilmu Sosbud
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -1551,40 +1548,253 @@
                                             Edukasi Aplikasi Virtual Meeting
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            June 17, 2021 | 12:29 PM
+                                            17 Juni 2021 | 12:29 WIB
                                         </p>
                                     </div>
                                 </a>
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/..."
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
                                 >
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">Culture</div>
-                                        <p class="m-0 judul fw-bold">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
                                             Memahami Seberapa Jauh Makna
                                             Pertemanan Lewat Undangan Pernikahan
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            May 12, 2022 | 7:50 PM
+                                            12 Mei 2022 | 19:50 WIB
                                         </p>
                                     </div>
                                 </a>
-                                <!-- Lanjutkan dengan struktur yang sama untuk semua artikel -->
-                                <!-- ... -->
                                 <a
                                     class="item-article"
-                                    href="https://www.kompasiana.com/..."
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/627ccb4218ffee7e72603862/memahami-sebeeapa-jauh-makna-pertemanan-lewat-undangan-pernikahan"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Memahami Seberapa Jauh Makna
+                                            Pertemanan Lewat Undangan Pernikahan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            12 Mei 2022 | 19:50 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62b3aaa8a0cdf838dc48d0f6/review-film-the-twin-cocok-buat-si-penakut-tapi-kepo-genre-film-horor"
                                 >
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">Film</div>
-                                        <p class="m-0 judul fw-bold">
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review Film] The Twin, Cocok Buat
+                                            Si Penakut tapi Kepo Genre Film
+                                            Horor
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            23 Juni 2022 | 06:50 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62be9e4cbb44862813155792/menyandang-title-mahasiswa-di-perantauan"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Diary</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Menyandang Title Mahasiswa di
+                                            Perantauan
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            1 Juli 2022 | 14:12 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c440780d823012b539ef52/review-kdrama-splash-splash-love-kisah-cinta-singkat-raja-masa-lampau-dan-siswa-modern"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review K-Drama] Splash- Splash
+                                            Love, Kisah Cinta Raja dan Siswi
+                                            Beda Generasi
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            5 Juli 2022 | 20:45 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/62c99a76bb4486636b045862/ukiran-langkah-berani-milo-hijrah-ke-paperstraw"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Alam & Tekno
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Ukiran Langkah Berani Milo Hijrah ke
+                                            Paperstraw
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            9 Juli 2022 | 22:10 WIB
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6305b59708a8b52068091b93/review-kdrama-liberation-notes-kisah-hidup-pekerja-kantoran-menemukan-arti-kebahagian-dan-kebebasan-hidup"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            [Review] K-Drama: "My Liberation
+                                            Notes", Kisah Pekerja Kantoran
+                                            Mencari Arti Kebahagiaan dan
+                                            Kebebasan Hidup
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            24 Agustus 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6320959908a8b57be53bdbc2/100-tahun-eka-tjipta-widjaja-makin-eksis-dikalangan-mahasiswa-dan-pelajar-dengan-kuota-super-murah-unlimited-smartfren"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Inovasi</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            100 Tahun Eka Tjipta Widjaja, Makin
+                                            Eksis di Kalangan Mahasiswa dan
+                                            pelajar dengan Kuota Super Murah
+                                            Unlimited Smartfren
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            13 September 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63592a5c4addee7c4f0bdb02/bridemaids-antara-urgensi-dan-gengsi-pesta-pernikahan-masa-kini"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Life</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Bridemaids: Antara Urgensi dan
+                                            Gengsi Pesta Pernikahan Masa Kini
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            26 Oktober 2025
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/6385304508a8b55c6852ddf2/alam-ikut-mengamalkan-sila-kelima-dalam-pancasila-di-planet-bekasi"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Sosbud
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Alam Ikut Mengamalkan Sila Kelima
+                                            dalam Pancasila di Planet Bekasi
+                                        </p>
+                                        <!-- <p class="mt-1 mb-0 tanggal"></p> -->
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="Glorifikasi Jakarta Kota Metropolitan, Masih Layak Dijadikan Destinasi Perantauan?"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Sosbud</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Glorifikasi Jakarta Kota
+                                            Metropolitan, Masih Layak Dijadikan
+                                            Destinasi Perantauan?
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            10 Desember 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/63b03b0b0788a339e069eda5/pahit-getir-jadi-siswa-rangking-1-yang-ngga-selalu-asik"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">
+                                            Ilmu Sosmud
+                                        </div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
+                                            Pahit Getir Jadi Siswa Ranking 1
+                                            yang Ngga Selalu Asik
+                                        </p>
+                                        <p class="mt-1 mb-0 tanggal">
+                                            31 Desember 2022
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    class="item-article"
+                                    href="https://www.kompasiana.com/novitameilinaanggraini9619/64b7de59a0688f39ef190d72/review-film-hati-suhita-cerita-perjuangan-gadis-cerdas-menangkan-pertarungan-cinta-dengan-sempurna"
+                                >
+                                    <div class="d-flex flex-column">
+                                        <div class="category mb-1">Film</div>
+                                        <p
+                                            class="m-0 judul fw-bold"
+                                            style="flex: 1"
+                                        >
                                             Review Film Hati Suhita: Cerita
                                             Perjuangan Gadis Cerdas Menangkan
                                             Pertarungan Cinta dengan Sempurna
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            July 9, 2023
+                                            9 Juli 2023
                                         </p>
                                     </div>
                                 </a>
@@ -1592,7 +1802,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container1">
                     <div
                         style="
@@ -1616,7 +1825,7 @@
                                     class="item-link-project"
                                     href="https://news.indozone.id/author/5508/Novita-Meilina-Anggraini"
                                 >
-                                    <img src="../img/news.png" alt="website" />
+                                    <img src="img/news.png" alt="website" />
                                     <p class="m-0 text-light">News</p>
                                 </a>
                                 <a
@@ -1624,7 +1833,7 @@
                                     class="item-link-project"
                                     href="https://food.indozone.id/author/5508/Novita-Meilina-Anggraini"
                                 >
-                                    <img src="../img/food.png" alt="website" />
+                                    <img src="img/food.png" alt="website" />
                                     <p class="m-0 text-light">Food</p>
                                 </a>
                                 <a
@@ -1632,7 +1841,7 @@
                                     class="item-link-project"
                                     href="https://tech.indozone.id/author/5508/Novita-Meilina-Anggraini"
                                 >
-                                    <img src="../img/tech.png" alt="website" />
+                                    <img src="img/tech.png" alt="website" />
                                     <p class="m-0 text-light">Tech</p>
                                 </a>
                                 <a
@@ -1640,10 +1849,7 @@
                                     class="item-link-project"
                                     href="https://www.indozone.id/community-writer/novita-meilina-anggraini"
                                 >
-                                    <img
-                                        src="../img/travel.png"
-                                        alt="website"
-                                    />
+                                    <img src="img/travel.png" alt="website" />
                                     <p class="m-0 text-light">Travel</p>
                                 </a>
                             </div>
@@ -1661,7 +1867,7 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample writing</p>
+                                <p>sample tulisan</p>
                             </div>
                             <div
                                 style="flex: 1"
@@ -1686,8 +1892,7 @@
                                             dan Arab
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, February 28, 2023 | 14:34
-                                            WIB
+                                            Selasa, 28 Februari 2023 | 14:34 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1709,7 +1914,7 @@
                                             Berpasir Putih, Ikonnya Kota Jepara
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Monday, June 19, 2023 | 02:55 WIB
+                                            Senin, 19 Juni 2023 | 02:55 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1732,8 +1937,7 @@
                                             Timur yang Kini Jarang Ditemukan
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, November 21, 2023 | 07:30
-                                            WIB
+                                            Selasa, 21 November 2023 | 07:30 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1755,7 +1959,7 @@
                                             Translator, Mana yang Lebih Baik?
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Thursday, July 25, 2024 | 07:00 WIB
+                                            Kamis, 25 Juli 2024 | 07:00 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1777,8 +1981,7 @@
                                             Tanpa Perlu Buka Kamera Hp Lagi
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Wednesday, August 14, 2024 | 09:08
-                                            WIB
+                                            Rabu, 14 Agustus 2024 | 09:08 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1801,8 +2004,7 @@
                                             Rudal Hipersonik
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Thursday, October 3, 2024 | 15:20
-                                            WIB
+                                            Kamis, 3 Oktober 2024 | 15:20 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1810,7 +2012,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container1">
                     <div
                         style="
@@ -1836,7 +2037,7 @@
                                     class="item-link-project"
                                     href="https://olret.viva.co.id/author/654-novita-meilina"
                                 >
-                                    <img src="../img/web.png" alt="website" />
+                                    <img src="img/web.png" alt="website" />
                                     <p class="m-0 text-light">Website</p>
                                 </a>
                             </div>
@@ -1854,7 +2055,7 @@
                                 class="vertical-text terang"
                                 style="padding-top: 1em"
                             >
-                                <p>sample writing</p>
+                                <p>sample tulisan</p>
                             </div>
                             <div
                                 style="flex: 1"
@@ -1870,7 +2071,7 @@
                                     />
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Culinary
+                                            Kulineran
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -1880,7 +2081,7 @@
                                             Cocok Buat Anak-anak!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, March 25, 2025 - 23:41 WIB
+                                            Selasa, 25 Maret 2025 - 23:41 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1894,7 +2095,7 @@
                                     />
                                     <div class="d-flex flex-column">
                                         <div class="category mb-1">
-                                            Culinary
+                                            Kulineran
                                         </div>
                                         <p
                                             class="m-0 judul fw-bold"
@@ -1905,7 +2106,7 @@
                                             Kronis
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, March 25, 2025 - 23:20 WIB
+                                            Selasa, 25 Maret 2025 - 23:20 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1918,7 +2119,9 @@
                                         alt=""
                                     />
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">Health</div>
+                                        <div class="category mb-1">
+                                            Kesehatan
+                                        </div>
                                         <p
                                             class="m-0 judul fw-bold"
                                             style="flex: 1"
@@ -1928,8 +2131,7 @@
                                             Diri Sendiri
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Wednesday, March 26, 2025 - 09:53
-                                            WIB
+                                            Rabu, 26 Maret 2025 - 09:53 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1951,8 +2153,7 @@
                                             Lebaran, Biar Hati Tenang!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Wednesday, March 26, 2025 - 08:48
-                                            WIB
+                                            Rabu, 26 Maret 2025 - 08:48 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1965,9 +2166,7 @@
                                         alt=""
                                     />
                                     <div class="d-flex flex-column">
-                                        <div class="category mb-1">
-                                            Culinary
-                                        </div>
+                                        <div class="category mb-1">Kuliner</div>
                                         <p
                                             class="m-0 judul fw-bold"
                                             style="flex: 1"
@@ -1977,7 +2176,7 @@
                                             Kulkas!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, March 25, 2025 - 15:25 WIB
+                                            Selasa, 25 Maret 2025 - 15:25 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -1999,7 +2198,7 @@
                                             Langsung ke Sarangnya!
                                         </p>
                                         <p class="mt-1 mb-0 tanggal">
-                                            Tuesday, March 25, 2025 - 23:03 WIB
+                                            Selasa, 25 Maret 2025 - 23:03 WIB
                                         </p>
                                     </div>
                                 </a>
@@ -2007,7 +2206,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container1">
                     <div
                         style="
@@ -2232,8 +2430,8 @@
                         }
                     }
                 </style>
-                <audio src="../audio/Mawar Tanpa Duri preview.mp3"></audio>
-                <audio src="../audio/jingle ilena preview.mp3"></audio>
+                <audio src="audio/Mawar Tanpa Duri preview.mp3"></audio>
+                <audio src="audio/jingle ilena preview.mp3"></audio>
                 <script>
                     const [mawar, ilena] = document.querySelectorAll("audio");
                     function putar(audioName, event) {
@@ -2255,22 +2453,22 @@
                     function setEventListenerAudio(audioName) {
                         eval(audioName).addEventListener("timeupdate", () => {
                             document.getElementById(
-                                `input-range-${audioName}`
+                                `input-range-${audioName}`,
                             ).value =
                                 (eval(audioName).currentTime /
                                     eval(audioName).duration) *
                                 100;
                             document.getElementById(
-                                `bar-range-${audioName}`
+                                `bar-range-${audioName}`,
                             ).style.width = `${
                                 (eval(audioName).currentTime /
                                     eval(audioName).duration) *
                                 100
                             }%`;
                             document.getElementById(
-                                `waktu-${audioName}`
+                                `waktu-${audioName}`,
                             ).textContent = formatTime(
-                                eval(audioName).currentTime
+                                eval(audioName).currentTime,
                             );
                         });
                         document
@@ -2280,7 +2478,7 @@
                                     (e.target.value / 100) *
                                     eval(audioName).duration;
                                 document.getElementById(
-                                    `bar-range-${audioName}`
+                                    `bar-range-${audioName}`,
                                 ).style.width = `${
                                     (e.target.value / 100) *
                                     eval(audioName).duration
@@ -2320,19 +2518,19 @@
                                 >
                                     <tbody>
                                         <tr>
-                                            <td class="pe-3">Project type</td>
+                                            <td class="pe-3">Jenis project</td>
                                             <td>: <b>Single</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Singer</td>
+                                            <td class="pe-3">Nama penyanyi</td>
                                             <td>: <b>Amel Putri</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Music produser</td>
+                                            <td class="pe-3">Produser music</td>
                                             <td>: <b>Galih Sukma</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Project year</td>
+                                            <td class="pe-3">Tahun project</td>
                                             <td>: <b>2024</b></td>
                                         </tr>
                                         <tr>
@@ -2348,7 +2546,7 @@
                                         href="https://music.amazon.com/albums/B0DCZVQFR6?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_JvSyePUN0TZCBjha8nlqeCdYk"
                                     >
                                         <img
-                                            src="../img/digitalMusic/amazon.png"
+                                            src="img/digitalMusic/amazon.png"
                                             alt=""
                                         />
                                         <p class="m-0">Amazon music</p>
@@ -2359,7 +2557,7 @@
                                         href="https://music.apple.com/id/album/mawar-tanpa-duri/1762885044?i=1762885051"
                                     >
                                         <img
-                                            src="../img/digitalMusic/apple.png"
+                                            src="img/digitalMusic/apple.png"
                                             alt=""
                                         />
                                         <p class="m-0">Apple music</p>
@@ -2370,7 +2568,7 @@
                                         href="https://dzr.page.link/8gZ7hgMZCyNZ8yaj6"
                                     >
                                         <img
-                                            src="../img/digitalMusic/deezer.png"
+                                            src="img/digitalMusic/deezer.png"
                                             alt=""
                                         />
                                         <p class="m-0">Deezer</p>
@@ -2381,7 +2579,7 @@
                                         href="https://www.instagram.com/reels/audio/488251170474188/"
                                     >
                                         <img
-                                            src="../img/digitalMusic/ig.png"
+                                            src="img/digitalMusic/ig.png"
                                             alt=""
                                         />
                                         <p class="m-0">Instagram music</p>
@@ -2392,7 +2590,7 @@
                                         href="https://open.joox.com/s/rd?version=2&k=U0Pup"
                                     >
                                         <img
-                                            src="../img/digitalMusic/joox.png"
+                                            src="img/digitalMusic/joox.png"
                                             alt=""
                                         />
                                         <p class="m-0">Joox</p>
@@ -2404,7 +2602,7 @@
                                         https://open.spotify.com/track/5KVmelqpTUgMenOAJH9KVn?si=-XG7Gmw8TM60PPVEmDwPXw&context=spotify%3Aalbum%3A63wrTYDIo8G3tnG0wiyvXu"
                                     >
                                         <img
-                                            src="../img/digitalMusic/spotify.png"
+                                            src="img/digitalMusic/spotify.png"
                                             alt=""
                                         />
                                         <p class="m-0">Spotify</p>
@@ -2416,7 +2614,7 @@
                                         https://vt.tiktok.com/ZSr4mkfxf/"
                                     >
                                         <img
-                                            src="../img/digitalMusic/tiktok.png"
+                                            src="img/digitalMusic/tiktok.png"
                                             alt=""
                                         />
                                         <p class="m-0">Tiktok music</p>
@@ -2428,7 +2626,7 @@
                                         https://music.youtube.com/watch?v=GXod2cERRKk&si=RkSDC1ht5Iwk8C2C"
                                     >
                                         <img
-                                            src="../img/digitalMusic/youtube.png"
+                                            src="img/digitalMusic/youtube.png"
                                             alt=""
                                         />
                                         <p class="m-0">Youtube music</p>
@@ -2448,7 +2646,7 @@
                                                         class="item-atas d-flex justify-content-center"
                                                     >
                                                         <img
-                                                            src="../img/lagu/mawar tanpa duri.png"
+                                                            src="img/lagu/mawar tanpa duri.png"
                                                             alt=""
                                                         />
                                                     </div>
@@ -2475,8 +2673,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Project
-                                                                            type
+                                                                            Jenis
+                                                                            project
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2489,7 +2687,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Singer
+                                                                            Nama
+                                                                            penyanyi
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2503,8 +2702,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Music
-                                                                            produser
+                                                                            Produser
+                                                                            music
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2518,8 +2717,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Project
-                                                                            year
+                                                                            Tahun
+                                                                            project
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2548,7 +2747,7 @@
                                                                     href="https://music.amazon.com/albums/B0DCZVQFR6?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_JvSyePUN0TZCBjha8nlqeCdYk"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/amazon.png"
+                                                                        src="img/digitalMusic/amazon.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2557,7 +2756,7 @@
                                                                     href="https://music.apple.com/id/album/mawar-tanpa-duri/1762885044?i=1762885051"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/apple.png"
+                                                                        src="img/digitalMusic/apple.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2566,7 +2765,7 @@
                                                                     href="https://dzr.page.link/8gZ7hgMZCyNZ8yaj6"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/deezer.png"
+                                                                        src="img/digitalMusic/deezer.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2575,7 +2774,7 @@
                                                                     href="https://www.instagram.com/reels/audio/488251170474188/"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/ig.png"
+                                                                        src="img/digitalMusic/ig.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2584,7 +2783,7 @@
                                                                     href="https://open.joox.com/s/rd?version=2&k=U0Pup"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/joox.png"
+                                                                        src="img/digitalMusic/joox.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2594,7 +2793,7 @@
                                                             https://open.spotify.com/track/5KVmelqpTUgMenOAJH9KVn?si=-XG7Gmw8TM60PPVEmDwPXw&context=spotify%3Aalbum%3A63wrTYDIo8G3tnG0wiyvXu"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/spotify.png"
+                                                                        src="img/digitalMusic/spotify.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2604,7 +2803,7 @@
                                                             https://vt.tiktok.com/ZSr4mkfxf/"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/tiktok.png"
+                                                                        src="img/digitalMusic/tiktok.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2614,7 +2813,7 @@
                                                             https://music.youtube.com/watch?v=GXod2cERRKk&si=RkSDC1ht5Iwk8C2C"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/youtube.png"
+                                                                        src="img/digitalMusic/youtube.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2644,7 +2843,7 @@
                                             class="container-control-audio-atas-desktop"
                                         >
                                             <img
-                                                src="../img/lagu/mawar tanpa duri.png"
+                                                src="img/lagu/mawar tanpa duri.png"
                                                 alt=""
                                             />
                                         </div>
@@ -2816,7 +3015,7 @@
                                                         class="item-atas d-flex justify-content-center"
                                                     >
                                                         <img
-                                                            src="../img/lagu/cover jingle ilena.jpg"
+                                                            src="img/lagu/cover jingle ilena.jpg"
                                                             alt=""
                                                         />
                                                     </div>
@@ -2843,8 +3042,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Project
-                                                                            type
+                                                                            Jenis
+                                                                            project
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2857,8 +3056,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Brand
-                                                                            name
+                                                                            Nama
+                                                                            brand
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2872,8 +3071,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Music
-                                                                            produser
+                                                                            Produser
+                                                                            music
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2887,8 +3086,8 @@
                                                                         <td
                                                                             class="pe-3"
                                                                         >
-                                                                            Project
-                                                                            year
+                                                                            Tahun
+                                                                            project
                                                                         </td>
                                                                         <td>
                                                                             :
@@ -2917,7 +3116,7 @@
                                                                     href="https://music.amazon.com/tracks/B0DV9YQNFS?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_MgoeiqBRfQsOserQHJNKNuOl9"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/amazon.png"
+                                                                        src="img/digitalMusic/amazon.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2926,7 +3125,7 @@
                                                                     href="https://music.apple.com/us/album/jingle-ilena/1793318320?i=1793318751"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/apple.png"
+                                                                        src="img/digitalMusic/apple.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2935,7 +3134,7 @@
                                                                     href="https://dzr.page.link/Gsgz8YrGMiawiaiW7"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/deezer.png"
+                                                                        src="img/digitalMusic/deezer.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2944,7 +3143,7 @@
                                                                     href="https://www.instagram.com/reels/audio/1799120150835577/"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/ig.png"
+                                                                        src="img/digitalMusic/ig.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2953,7 +3152,7 @@
                                                                     href="https://open.joox.com/s/rd?version=2&k=U0vya"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/joox.png"
+                                                                        src="img/digitalMusic/joox.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2962,7 +3161,7 @@
                                                                     href="https://open.spotify.com/album/3cvglhpuEeL9t3ZUnxe8ra?si=RIZnZ8c4RACz9Iz2i7T7RA"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/spotify.png"
+                                                                        src="img/digitalMusic/spotify.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2971,7 +3170,7 @@
                                                                     href="https://vt.tiktok.com/ZSr4pGaW3/"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/tiktok.png"
+                                                                        src="img/digitalMusic/tiktok.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -2980,7 +3179,7 @@
                                                                     href="https://music.youtube.com/watch?v=LF5kxmLyZsU&si=1EYq7JZAdt9vfav8"
                                                                 >
                                                                     <img
-                                                                        src="../img/digitalMusic/youtube.png"
+                                                                        src="img/digitalMusic/youtube.png"
                                                                         alt=""
                                                                     />
                                                                 </a>
@@ -3010,7 +3209,7 @@
                                             class="container-control-audio-atas-desktop"
                                         >
                                             <img
-                                                src="../img/lagu/cover jingle ilena.jpg"
+                                                src="img/lagu/cover jingle ilena.jpg"
                                                 alt=""
                                             />
                                         </div>
@@ -3111,19 +3310,19 @@
                                 >
                                     <tbody>
                                         <tr>
-                                            <td class="pe-3">Project type</td>
+                                            <td class="pe-3">Jenis project</td>
                                             <td>: <b>Single</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Brand name</td>
+                                            <td class="pe-3">Nama brand</td>
                                             <td>: <b>Ilena Furniture</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Music producer</td>
+                                            <td class="pe-3">Produser music</td>
                                             <td>: <b>Galih Sukma</b></td>
                                         </tr>
                                         <tr>
-                                            <td class="pe-3">Project year</td>
+                                            <td class="pe-3">Tahun project</td>
                                             <td>: <b>2024</b></td>
                                         </tr>
                                         <tr>
@@ -3139,7 +3338,7 @@
                                         href="https://music.amazon.com/tracks/B0DV9YQNFS?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_MgoeiqBRfQsOserQHJNKNuOl9"
                                     >
                                         <img
-                                            src="../img/digitalMusic/amazon.png"
+                                            src="img/digitalMusic/amazon.png"
                                             alt=""
                                         />
                                         <p class="m-0">Amazon music</p>
@@ -3150,7 +3349,7 @@
                                         href="https://music.apple.com/us/album/jingle-ilena/1793318320?i=1793318751"
                                     >
                                         <img
-                                            src="../img/digitalMusic/apple.png"
+                                            src="img/digitalMusic/apple.png"
                                             alt=""
                                         />
                                         <p class="m-0">Apple music</p>
@@ -3161,7 +3360,7 @@
                                         href="https://dzr.page.link/Gsgz8YrGMiawiaiW7"
                                     >
                                         <img
-                                            src="../img/digitalMusic/deezer.png"
+                                            src="img/digitalMusic/deezer.png"
                                             alt=""
                                         />
                                         <p class="m-0">Deezer</p>
@@ -3172,7 +3371,7 @@
                                         href="https://www.instagram.com/reels/audio/1799120150835577/"
                                     >
                                         <img
-                                            src="../img/digitalMusic/ig.png"
+                                            src="img/digitalMusic/ig.png"
                                             alt=""
                                         />
                                         <p class="m-0">Instagram music</p>
@@ -3183,7 +3382,7 @@
                                         href="https://open.joox.com/s/rd?version=2&k=U0vya"
                                     >
                                         <img
-                                            src="../img/digitalMusic/joox.png"
+                                            src="img/digitalMusic/joox.png"
                                             alt=""
                                         />
                                         <p class="m-0">Joox</p>
@@ -3194,7 +3393,7 @@
                                         href="https://open.spotify.com/album/3cvglhpuEeL9t3ZUnxe8ra?si=RIZnZ8c4RACz9Iz2i7T7RA"
                                     >
                                         <img
-                                            src="../img/digitalMusic/spotify.png"
+                                            src="img/digitalMusic/spotify.png"
                                             alt=""
                                         />
                                         <p class="m-0">Spotify</p>
@@ -3205,7 +3404,7 @@
                                         href="https://vt.tiktok.com/ZSr4pGaW3/"
                                     >
                                         <img
-                                            src="../img/digitalMusic/tiktok.png"
+                                            src="img/digitalMusic/tiktok.png"
                                             alt=""
                                         />
                                         <p class="m-0">Tiktok music</p>
@@ -3216,7 +3415,7 @@
                                         href="https://music.youtube.com/watch?v=LF5kxmLyZsU&si=1EYq7JZAdt9vfav8"
                                     >
                                         <img
-                                            src="../img/digitalMusic/youtube.png"
+                                            src="img/digitalMusic/youtube.png"
                                             alt=""
                                         />
                                         <p class="m-0">Youtube music</p>
@@ -3277,7 +3476,7 @@
             <div>
                 <div class="mb-3">
                     <h4 class="text-terang text-poppins m-0">
-                        Let's discuss with me!
+                        Mari berdiskusi dengan saya!
                     </h4>
                     <h1 class="text-gelap text-slab">Get In Touch</h1>
                 </div>
@@ -3287,7 +3486,7 @@
                         href="https://wa.me/+6289636747858"
                         class="item-sosmed"
                     >
-                        <img src="../img/phone.png" alt="" />
+                        <img src="img/phone.png" alt="" />
                         <p class="m-0 text-poppins">Phone</p>
                     </a>
                     <a
@@ -3295,7 +3494,7 @@
                         href="mailto:novitameilinaa@gmail.com"
                         class="item-sosmed"
                     >
-                        <img src="../img/mail.png" alt="" />
+                        <img src="img/mail.png" alt="" />
                         <p class="m-0 text-poppins">Gmail</p>
                     </a>
                     <a
@@ -3303,7 +3502,7 @@
                         href="https://intip.in/novitameilinaanggraini"
                         class="item-sosmed"
                     >
-                        <img src="../img/linked.png" alt="" />
+                        <img src="img/linked.png" alt="" />
                         <p class="m-0 text-poppins">LinkedIn</p>
                     </a>
                     <a
@@ -3311,7 +3510,7 @@
                         href="https://www.instagram.com/novita.meilina"
                         class="item-sosmed"
                     >
-                        <img src="../img/ig.png" alt="" />
+                        <img src="img/ig.png" alt="" />
                         <p class="m-0 text-poppins">Instagram</p>
                     </a>
                 </div>
