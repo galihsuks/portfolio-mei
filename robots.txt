@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novitameilina.my.id/sitemap.xml
