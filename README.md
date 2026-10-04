@@ -1,8 +1,8 @@
-# Mei Anggraini Portfolio
+# Novita Meilina Anggraini Portfolio
 
-This repository contains the source code for **Mei Anggraini's personal portfolio website**, available at [novitameilina.my.id](https://novitameilina.my.id/).
+This repository contains the source code for **Novita Meilina Anggraini's personal portfolio website**, available at [novitameilina.my.id](https://novitameilina.my.id/).
 
-The website is designed to showcase Mei's work as an **SEO Writer**, **Content Writer**, and **Digital Marketing professional**. It highlights personal branding, service offerings, selected projects, published articles, contact information, and digital music-related creative work.
+The website is designed to showcase Novita's work as an **SEO Writer**, **Content Writer**, and **Digital Marketing professional**. It highlights personal branding, service offerings, selected projects, published articles, contact information, and digital music-related creative work.
 
 ## Overview
 
